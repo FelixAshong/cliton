@@ -27,7 +27,7 @@ export default function HomePage() {
           banner={{
             eyebrow: "Xiaomi Exclusive",
             title: "Xiaomi 11T 128GB",
-            price: "$299",
+            price: "GH₵4,490",
             image: "/images/hero/pixel.png",
             tone: "orange",
           }}

@@ -9,9 +9,9 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CLICON — Online eCommerce Store",
+  title: "CLICON Ghana — Tech Shop & Electronics Store",
   description:
-    "Clicon tech shop — shop electronics, computers, smartphones, and accessories.",
+    "CLICON Ghana — buy phones, laptops, accessories and gadgets with delivery across Accra and Ghana.",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={publicSans.variable}>
+    <html lang="en-GH" className={publicSans.variable}>
       <body>{children}</body>
     </html>
   );

@@ -42,7 +42,7 @@ export function PromoBanners() {
               height={220}
             />
           </div>
-          <span className={styles.price}>$590</span>
+          <span className={styles.price}>GH₵8,850</span>
         </article>
       </div>
     </section>

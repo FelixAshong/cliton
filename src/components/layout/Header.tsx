@@ -23,7 +23,7 @@ export function Header() {
 
       <div className={styles.topBar}>
         <div className={`container ${styles.topInner}`}>
-          <p>Welcome to Clicon online eCommerce store.</p>
+          <p>Welcome to CLICON Ghana — your online tech shop.</p>
           <div className={styles.topRight}>
             <div className={styles.follow}>
               <span>Follow us:</span>
@@ -38,7 +38,7 @@ export function Header() {
               Eng <ChevronDown size={12} />
             </button>
             <button type="button" className={styles.locale}>
-              USD <ChevronDown size={12} />
+              GHS <ChevronDown size={12} />
             </button>
           </div>
         </div>
@@ -92,9 +92,9 @@ export function Header() {
               <span className={styles.helpIcon}>?</span> Need Help
             </Link>
           </div>
-          <a href="tel:+12025550104" className={styles.phone}>
+          <a href="tel:+233302555010" className={styles.phone}>
             <Phone size={22} strokeWidth={1.5} />
-            +1-202-555-0104
+            +233 30 255 5010
           </a>
         </div>
       </div>

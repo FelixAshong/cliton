@@ -4,23 +4,23 @@ import styles from "./Features.module.css";
 const features = [
   {
     icon: Package,
-    title: "Fasted Delivery",
-    text: "Delivery in 24/H",
+    title: "Nationwide Delivery",
+    text: "Accra same-day · Ghana-wide shipping",
   },
   {
     icon: Trophy,
-    title: "24 Hours Return",
-    text: "100% money back guarantee",
+    title: "7-Day Returns",
+    text: "Easy returns on eligible items",
   },
   {
     icon: CreditCard,
     title: "Secure Payment",
-    text: "Your money is safe",
+    text: "MoMo, card & bank transfer",
   },
   {
     icon: Headphones,
     title: "Support 24/7",
-    text: "Live contact/message",
+    text: "Call or WhatsApp anytime",
   },
 ];
 

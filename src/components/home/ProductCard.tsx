@@ -4,7 +4,10 @@ import type { Product } from "@/data/products";
 import styles from "./ProductCard.module.css";
 
 function formatPrice(n: number) {
-  return n >= 1000 ? `$${n.toLocaleString("en-US")}` : `$${n}`;
+  return `GH₵${n.toLocaleString("en-GH", {
+    minimumFractionDigits: n % 1 === 0 ? 0 : 2,
+    maximumFractionDigits: 2,
+  })}`;
 }
 
 type Props = {

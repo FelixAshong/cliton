@@ -57,14 +57,14 @@ export function Footer() {
             CLICON
           </Link>
           <div className={styles.contact}>
-            <p className={styles.label}>Customer Supports:</p>
-            <a href="tel:6295550129">(629) 555-0129</a>
+            <p className={styles.label}>Customer Support:</p>
+            <a href="tel:+233302555010">+233 30 255 5010</a>
             <p>
-              4517 Washington Ave.
+              15 Independence Avenue
               <br />
-              Manchester, Kentucky 39495
+              Ridge, Accra, Ghana
             </p>
-            <a href="mailto:info@kinbo.com">info@kinbo.com</a>
+            <a href="mailto:hello@clicon.com.gh">hello@clicon.com.gh</a>
           </div>
         </div>
 
@@ -115,7 +115,7 @@ export function Footer() {
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>Kinbo - eCommerce Template © 2021. Design by Templatecookie</p>
+          <p>CLICON Ghana © {new Date().getFullYear()}. Delivering tech across Ghana.</p>
           <div className={styles.socials} aria-label="Social links">
             {["Tw", "Fb", "In", "Ig", "Yt"].map((label) => (
               <a key={label} href="#" className={styles.social} aria-label={label}>

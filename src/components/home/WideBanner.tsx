@@ -8,10 +8,11 @@ export function WideBanner() {
       <div className="container">
         <div className={styles.banner}>
           <div className={styles.content}>
-            <span className="badge badge-sale">SAVE UP TO $200</span>
+            <span className="badge badge-sale">SAVE UP TO GH₵3,000</span>
             <h2>Macbook Pro</h2>
             <p>
-              Apple M1 Max Chip. 32GB Unified Memory, 1TB SSD Storage. Space Gray.
+              Apple M1 Max Chip. 32GB Unified Memory, 1TB SSD Storage. Available for
+              pickup in Accra.
             </p>
             <a href="#products" className="btn btn-primary btn-primary-lg">
               Shop Now <ArrowRight size={22} />
@@ -26,7 +27,7 @@ export function WideBanner() {
               priority={false}
             />
           </div>
-          <span className={styles.price}>$1999</span>
+          <span className={styles.price}>GH₵29,999</span>
         </div>
       </div>
     </section>

@@ -37,7 +37,7 @@ export function Hero() {
             </div>
             <div className={styles.cardBody}>
               <h3>Xiaomi FlipBuds Pro</h3>
-              <p className={styles.priceTag}>$299 USD</p>
+              <p className={styles.priceTag}>GH₵4,490</p>
               <a href="#products" className="btn btn-primary">
                 Shop Now <ArrowRight size={18} />
               </a>
@@ -53,8 +53,8 @@ export function Hero() {
             </div>
             <h1>Xbox Consoles</h1>
             <p>
-              Save up to 50% on select Xbox games. Get 3 months of PC Game Pass for $2
-              USD.
+              Save up to 50% on select Xbox games. Fast delivery in Accra and across
+              Ghana.
             </p>
             <a href="#deals" className="btn btn-primary btn-primary-lg">
               Shop Now <ArrowRight size={22} />
@@ -68,7 +68,7 @@ export function Hero() {
               height={400}
               priority
             />
-            <span className={styles.priceBubble}>$299</span>
+            <span className={styles.priceBubble}>GH₵4,490</span>
           </div>
           <div className={styles.dots} aria-hidden>
             <span className={styles.dotActive} />
