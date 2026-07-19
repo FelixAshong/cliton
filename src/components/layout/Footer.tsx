@@ -107,20 +107,6 @@ export function Footer() {
             )}
           </div>
         ))}
-
-        <div>
-          <h3 className={styles.colTitle}>Download APP</h3>
-          <div className={styles.apps}>
-            <a href="#" className={styles.app}>
-              <span>Get it now</span>
-              <strong>Google Play</strong>
-            </a>
-            <a href="#" className={styles.app}>
-              <span>Get it now</span>
-              <strong>App Store</strong>
-            </a>
-          </div>
-        </div>
       </div>
 
       <div className={styles.bottom}>

@@ -17,7 +17,7 @@
   overflow: hidden;
   min-height: 440px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-3d), var(--glow-purple);
+  box-shadow: none;
 }
 
 .content {
@@ -61,7 +61,7 @@
   object-fit: contain;
   width: min(100%, 760px);
   height: auto;
-  filter: drop-shadow(0 18px 30px rgba(47, 107, 255, 0.15));
+  filter: none;
   animation: float 6s ease-in-out infinite;
 }
 
@@ -92,7 +92,7 @@
   place-items: center;
   text-align: center;
   line-height: 1.15;
-  box-shadow: var(--glow-cyan);
+  box-shadow: none;
   z-index: 2;
 }
 

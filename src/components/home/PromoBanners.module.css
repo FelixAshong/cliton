@@ -19,14 +19,14 @@
   overflow: hidden;
   min-height: 336px;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-3d);
+  box-shadow: none;
   background: #ffffff;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-3d), var(--glow-cyan);
+  box-shadow: none;
 }
 
 .light {
@@ -65,7 +65,7 @@
 
 .image img {
   object-fit: contain;
-  filter: drop-shadow(0 12px 20px rgba(18, 20, 31, 0.12));
+  filter: none;
 }
 
 .price {
@@ -85,7 +85,7 @@
   text-align: center;
   line-height: 1.15;
   border: 3px solid #ffffff;
-  box-shadow: var(--glow-cyan);
+  box-shadow: none;
 }
 
 @media (max-width: 900px) {

@@ -22,15 +22,14 @@
   align-items: center;
   gap: 16px;
   text-align: center;
-  transition: border-color 0.2s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  transition: border-color 0.2s ease, transform 0.25s ease;
   background: #ffffff;
-  box-shadow: var(--shadow-3d);
+  box-shadow: none;
 }
 
 .card:hover {
   border-color: rgba(123, 47, 247, 0.3);
   transform: translateY(-6px);
-  box-shadow: var(--shadow-3d), var(--glow-purple);
 }
 
 .image {
@@ -44,7 +43,7 @@
   object-fit: contain;
   max-height: 148px;
   width: auto;
-  filter: drop-shadow(0 10px 16px rgba(18, 20, 31, 0.1));
+  filter: none;
 }
 
 .card span {
@@ -64,7 +63,7 @@
   color: white;
   display: grid;
   place-items: center;
-  box-shadow: var(--glow-purple);
+  box-shadow: none;
   transition: transform 0.2s ease;
 }
 

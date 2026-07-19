@@ -63,7 +63,7 @@
   color: var(--text);
   border-bottom: 1px solid var(--border);
   backdrop-filter: blur(16px);
-  box-shadow: 0 8px 24px rgba(18, 20, 31, 0.05);
+  box-shadow: none;
 }
 
 .mainInner {
@@ -98,7 +98,7 @@
   border: 1px solid var(--border);
   border-radius: 999px;
   padding: 12px 18px;
-  box-shadow: 0 8px 20px rgba(18, 20, 31, 0.05);
+  box-shadow: none;
 }
 
 .search input {
@@ -139,7 +139,7 @@
 .actions a:hover {
   transform: translateY(-2px);
   border-color: rgba(123, 47, 247, 0.3);
-  box-shadow: var(--glow-purple);
+  box-shadow: none;
   color: var(--purple);
 }
 
@@ -194,7 +194,7 @@
   font-weight: 600;
   font-size: 13px;
   color: white;
-  box-shadow: var(--glow-purple);
+  box-shadow: none;
 }
 
 .navItem {

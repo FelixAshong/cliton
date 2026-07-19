@@ -20,14 +20,14 @@
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: var(--shadow-3d);
+  box-shadow: none;
   background: #ffffff;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-3d), var(--glow-purple);
+  box-shadow: none;
 }
 
 .dark {
@@ -112,7 +112,7 @@
   width: 100%;
   height: auto;
   max-height: 180px;
-  filter: drop-shadow(0 14px 24px rgba(18, 20, 31, 0.12));
+  filter: none;
 }
 
 .offBadge {
@@ -125,7 +125,7 @@
   font-size: 14px;
   padding: 8px 14px;
   border-radius: 999px;
-  box-shadow: var(--glow-purple);
+  box-shadow: none;
 }
 
 .mainContent {
@@ -176,7 +176,7 @@
   object-fit: contain;
   width: min(100%, 360px);
   height: auto;
-  filter: drop-shadow(0 20px 32px rgba(47, 107, 255, 0.18));
+  filter: none;
   animation: float 5s ease-in-out infinite;
 }
 
@@ -207,7 +207,7 @@
   place-items: center;
   text-align: center;
   line-height: 1.15;
-  box-shadow: var(--glow-cyan), 0 12px 24px rgba(18, 20, 31, 0.12);
+  box-shadow: none;
 }
 
 .dots {
@@ -227,7 +227,7 @@
 
 .dotActive {
   background: var(--purple) !important;
-  box-shadow: 0 0 10px rgba(123, 47, 247, 0.4);
+  box-shadow: none;
 }
 
 @media (max-width: 1100px) {

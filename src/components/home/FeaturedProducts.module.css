@@ -17,7 +17,7 @@
   position: relative;
   overflow: hidden;
   border: 1px solid var(--border-strong);
-  box-shadow: var(--shadow-3d), var(--glow-purple);
+  box-shadow: none;
 }
 
 .yellow {
@@ -73,7 +73,7 @@
 .bannerImage img {
   object-fit: contain;
   max-height: 280px;
-  filter: drop-shadow(0 14px 24px rgba(18, 20, 31, 0.12));
+  filter: none;
 }
 
 .main {
@@ -107,7 +107,7 @@
   color: white !important;
   font-weight: 600;
   background: var(--brand-gradient);
-  box-shadow: var(--glow-purple);
+  box-shadow: none;
 }
 
 .grid {

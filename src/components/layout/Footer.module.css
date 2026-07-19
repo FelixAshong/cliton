@@ -7,7 +7,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.2fr repeat(3, 1fr) 0.9fr;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
   gap: 32px;
   padding-bottom: 48px;
 }
@@ -101,34 +101,6 @@
 .tags a:hover {
   border-color: rgba(123, 47, 247, 0.35);
   color: var(--purple);
-}
-
-.apps {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.app {
-  display: flex;
-  flex-direction: column;
-  background: #ffffff;
-  border: 1px solid var(--border);
-  padding: 14px 18px;
-  border-radius: 16px;
-  gap: 2px;
-  box-shadow: var(--shadow-3d);
-}
-
-.app span {
-  font-size: 11px;
-  color: var(--text-dim);
-}
-
-.app strong {
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--text);
 }
 
 .bottom {

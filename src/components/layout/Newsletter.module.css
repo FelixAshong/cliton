@@ -49,7 +49,7 @@
   border-radius: 999px;
   padding: 8px;
   gap: 8px;
-  box-shadow: var(--shadow-3d), var(--glow-purple);
+  box-shadow: none;
 }
 
 .form input {
