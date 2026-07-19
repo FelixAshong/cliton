@@ -77,7 +77,8 @@
   aspect-ratio: 1;
   border: 1px solid var(--border);
   border-radius: 8px;
-  background: var(--gray-50);
+  /* Fixed studio frame — never follows the selected color */
+  background: #f3f5fb;
   overflow: hidden;
 }
 
@@ -91,17 +92,6 @@
 .mainImage :global(img) {
   object-fit: contain;
   padding: 24px;
-  transition: opacity 0.25s ease;
-}
-
-.colorTint {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  transition:
-    background 0.35s ease,
-    opacity 0.35s ease;
-  z-index: 1;
 }
 
 .colorChip {
@@ -111,7 +101,7 @@
   z-index: 2;
   padding: 6px 10px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid var(--border);
   color: var(--text);
   font-size: 12px;
@@ -149,7 +139,7 @@
   aspect-ratio: 1;
   border: 1px solid var(--border);
   border-radius: 4px;
-  background: #ffffff;
+  background: #f3f5fb;
   overflow: hidden;
 }
 
@@ -163,15 +153,6 @@
 .thumb :global(img) {
   object-fit: contain;
   padding: 4px;
-}
-
-.thumbTint {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  transition:
-    background 0.35s ease,
-    opacity 0.35s ease;
 }
 
 .thumbActive {

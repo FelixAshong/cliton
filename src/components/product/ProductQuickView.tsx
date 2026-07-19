@@ -38,11 +38,8 @@ type ColorOption = {
   id: string;
   name: string;
   hex: string;
-  /** CSS filter applied to the product photo */
+  /** Recolors the product only — black photo backdrops are knocked out in CSS */
   filter: string;
-  /** Soft color wash over the image */
-  tintOpacity: number;
-  blendMode: "color" | "multiply" | "soft-light";
 };
 
 const COLOR_OPTIONS: ColorOption[] = [
@@ -51,48 +48,36 @@ const COLOR_OPTIONS: ColorOption[] = [
     name: "Space Gray",
     hex: "#5c5f64",
     filter: "none",
-    tintOpacity: 0,
-    blendMode: "color",
   },
   {
     id: "silver",
     name: "Silver",
-    hex: "#d7dbe0",
-    filter: "brightness(1.18) saturate(0.65) contrast(0.92)",
-    tintOpacity: 0.28,
-    blendMode: "soft-light",
+    hex: "#c8ccd1",
+    filter: "saturate(0.15) contrast(0.88)",
   },
   {
     id: "midnight",
     name: "Midnight",
     hex: "#1c1f24",
-    filter: "brightness(0.62) contrast(1.2) saturate(0.75)",
-    tintOpacity: 0.35,
-    blendMode: "multiply",
+    filter: "brightness(0.75) contrast(1.2)",
   },
   {
     id: "starlight",
     name: "Starlight",
-    hex: "#f0e2cf",
-    filter: "sepia(0.28) brightness(1.1) saturate(0.9) contrast(0.98)",
-    tintOpacity: 0.32,
-    blendMode: "soft-light",
+    hex: "#e8d9c3",
+    filter: "saturate(0.45) hue-rotate(25deg) contrast(0.95)",
   },
   {
     id: "blue",
     name: "Blue",
     hex: "#3b6fd9",
-    filter: "hue-rotate(195deg) saturate(1.25) brightness(0.95)",
-    tintOpacity: 0.4,
-    blendMode: "color",
+    filter: "hue-rotate(195deg) saturate(1.45)",
   },
   {
     id: "red",
     name: "Product Red",
     hex: "#c62828",
-    filter: "hue-rotate(330deg) saturate(1.45) brightness(0.92)",
-    tintOpacity: 0.42,
-    blendMode: "color",
+    filter: "hue-rotate(330deg) saturate(1.55)",
   },
 ];
 
@@ -190,10 +175,11 @@ export function ProductQuickView({ product, onClose }: Props) {
         </button>
 
         <div className={styles.gallery}>
-          <div className={styles.mainImage} key={selectedColor.id}>
+          <div className={styles.mainImage}>
             <div
               className={styles.imageStage}
               style={{ filter: selectedColor.filter }}
+              key={selectedColor.id}
             >
               <Image
                 src={gallery[activeImage] ?? product.image}
@@ -203,17 +189,6 @@ export function ProductQuickView({ product, onClose }: Props) {
                 priority
               />
             </div>
-            {selectedColor.tintOpacity > 0 && (
-              <div
-                className={styles.colorTint}
-                style={{
-                  background: selectedColor.hex,
-                  opacity: selectedColor.tintOpacity,
-                  mixBlendMode: selectedColor.blendMode,
-                }}
-                aria-hidden
-              />
-            )}
             <span className={styles.colorChip}>{selectedColor.name}</span>
           </div>
 
@@ -244,17 +219,6 @@ export function ProductQuickView({ product, onClose }: Props) {
                   >
                     <Image src={src} alt="" fill sizes="72px" />
                   </div>
-                  {selectedColor.tintOpacity > 0 && (
-                    <div
-                      className={styles.thumbTint}
-                      style={{
-                        background: selectedColor.hex,
-                        opacity: selectedColor.tintOpacity,
-                        mixBlendMode: selectedColor.blendMode,
-                      }}
-                      aria-hidden
-                    />
-                  )}
                 </button>
               ))}
             </div>
