@@ -7,7 +7,6 @@ import {
   MapPin,
   Phone,
   Search,
-  ShoppingCart,
 } from "lucide-react";
 import {
   FacebookIcon,
@@ -15,6 +14,7 @@ import {
   SnapchatIcon,
   TikTokIcon,
 } from "@/components/icons/SocialIcons";
+import { CartPopup } from "./CartPopup";
 import { CategoryMegaMenu } from "./CategoryMegaMenu";
 import { PromoBanner } from "./PromoBanner";
 import { SignInPopup } from "./SignInPopup";
@@ -71,10 +71,7 @@ export function Header() {
           </form>
 
           <div className={styles.actions}>
-            <Link href="/cart" className={styles.cart} aria-label="Shopping cart">
-              <ShoppingCart size={28} strokeWidth={1.5} />
-              <span>2</span>
-            </Link>
+            <CartPopup />
             <Link href="/wishlist" aria-label="Wishlist">
               <Heart size={28} strokeWidth={1.5} />
             </Link>
