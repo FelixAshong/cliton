@@ -195,6 +195,24 @@ export function ShopPage() {
 
           <section className={styles.filterBlock}>
             <h2>Popular Brands</h2>
+            <label className={styles.brandSelect}>
+              <select
+                value={brands.length === 1 ? brands[0] : ""}
+                aria-label="Popular brands"
+                onChange={(e) => {
+                  const value = e.target.value;
+                  setBrands(value ? [value] : []);
+                  setPage(1);
+                }}
+              >
+                <option value="">All Brands</option>
+                {shopBrands.map((brand) => (
+                  <option key={brand} value={brand}>
+                    {brand}
+                  </option>
+                ))}
+              </select>
+            </label>
             <div className={styles.brandGrid}>
               {shopBrands.map((brand) => (
                 <label key={brand} className={styles.checkItem}>
