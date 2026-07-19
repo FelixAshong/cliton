@@ -38,13 +38,6 @@ export function FlyerSlideshow() {
   return (
     <section className={`section ${styles.section}`} id="flyers" aria-roledescription="carousel">
       <div className="container">
-        <div className={styles.head}>
-          <div>
-            <h2 className="section-title">Promo Flyers</h2>
-            <p className={styles.subtitle}>Latest offers &amp; featured picks</p>
-          </div>
-        </div>
-
         <div className={styles.split}>
           <div
             className={styles.flyerCard}
