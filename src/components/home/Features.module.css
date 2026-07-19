@@ -1,43 +1,54 @@
 .section {
-  padding: 24px 0 0;
+  padding: 28px 0 0;
 }
 
 .row {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border: 1px solid var(--gray-100);
-  border-radius: var(--radius);
-  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+  box-shadow: var(--shadow-3d);
+  overflow: hidden;
 }
 
 .item {
   position: relative;
-  padding: 16px;
+  padding: 18px;
 }
 
 .content {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 8px;
+  padding: 10px;
+  border-radius: 16px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.content:hover {
+  background: var(--gray-50);
+  transform: translateY(-2px);
 }
 
 .content svg {
-  color: var(--gray-900);
+  color: var(--purple);
   flex-shrink: 0;
 }
 
 .content h3 {
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 700;
   text-transform: uppercase;
   line-height: 20px;
+  letter-spacing: 0.04em;
+  color: var(--text);
 }
 
 .content p {
-  color: var(--gray-600);
-  font-size: 14px;
-  line-height: 20px;
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 18px;
 }
 
 .sep {
@@ -46,7 +57,7 @@
   top: 26px;
   bottom: 26px;
   width: 1px;
-  background: var(--gray-100);
+  background: var(--border);
 }
 
 @media (max-width: 900px) {
