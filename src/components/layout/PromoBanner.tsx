@@ -17,7 +17,7 @@ export function PromoBanner() {
         </div>
         <div className={styles.discount}>
           <span>Up to</span>
-          <strong>59%</strong>
+          <strong>30%</strong>
           <span>OFF</span>
         </div>
         <a href="#deals" className={`btn btn-warning ${styles.cta}`}>

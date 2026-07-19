@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import { SiteGate } from "@/components/layout/SiteGate";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -21,7 +22,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-GH" className={outfit.variable}>
-      <body>{children}</body>
+      <body>
+        <SiteGate />
+        {children}
+      </body>
     </html>
   );
 }
