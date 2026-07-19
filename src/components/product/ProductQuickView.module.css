@@ -81,9 +81,42 @@
   overflow: hidden;
 }
 
-.mainImage img {
+.imageStage {
+  position: absolute;
+  inset: 0;
+  transition: filter 0.35s ease;
+}
+
+.imageStage img,
+.mainImage :global(img) {
   object-fit: contain;
   padding: 24px;
+  transition: opacity 0.25s ease;
+}
+
+.colorTint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition:
+    background 0.35s ease,
+    opacity 0.35s ease;
+  z-index: 1;
+}
+
+.colorChip {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 2;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(18, 20, 31, 0.08);
 }
 
 .thumbsRow {
@@ -120,9 +153,25 @@
   overflow: hidden;
 }
 
-.thumb img {
+.thumbStage {
+  position: absolute;
+  inset: 0;
+  transition: filter 0.35s ease;
+}
+
+.thumb img,
+.thumb :global(img) {
   object-fit: contain;
   padding: 4px;
+}
+
+.thumbTint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  transition:
+    background 0.35s ease,
+    opacity 0.35s ease;
 }
 
 .thumbActive {
@@ -255,9 +304,14 @@
   color: var(--text);
 }
 
+.optionLabel strong {
+  font-weight: 600;
+}
+
 .swatches {
   display: flex;
-  gap: 12px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .swatch {
@@ -265,11 +319,24 @@
   height: 40px;
   border-radius: 999px;
   border: 2px solid transparent;
-  box-shadow: inset 0 0 0 1px var(--border);
+  box-shadow:
+    inset 0 0 0 1px rgba(18, 20, 31, 0.12),
+    0 1px 2px rgba(18, 20, 31, 0.06);
+  transition:
+    transform 0.15s ease,
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.swatch:hover {
+  transform: scale(1.06);
 }
 
 .swatchActive {
   border-color: var(--purple);
+  box-shadow:
+    inset 0 0 0 1px rgba(18, 20, 31, 0.08),
+    0 0 0 2px rgba(123, 47, 247, 0.2);
 }
 
 .select {

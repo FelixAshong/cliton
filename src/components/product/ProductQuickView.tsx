@@ -34,6 +34,68 @@ const GALLERY_POOL = [
   "/images/hero/pixel.png",
 ];
 
+type ColorOption = {
+  id: string;
+  name: string;
+  hex: string;
+  /** CSS filter applied to the product photo */
+  filter: string;
+  /** Soft color wash over the image */
+  tintOpacity: number;
+  blendMode: "color" | "multiply" | "soft-light";
+};
+
+const COLOR_OPTIONS: ColorOption[] = [
+  {
+    id: "space-gray",
+    name: "Space Gray",
+    hex: "#5c5f64",
+    filter: "none",
+    tintOpacity: 0,
+    blendMode: "color",
+  },
+  {
+    id: "silver",
+    name: "Silver",
+    hex: "#d7dbe0",
+    filter: "brightness(1.18) saturate(0.65) contrast(0.92)",
+    tintOpacity: 0.28,
+    blendMode: "soft-light",
+  },
+  {
+    id: "midnight",
+    name: "Midnight",
+    hex: "#1c1f24",
+    filter: "brightness(0.62) contrast(1.2) saturate(0.75)",
+    tintOpacity: 0.35,
+    blendMode: "multiply",
+  },
+  {
+    id: "starlight",
+    name: "Starlight",
+    hex: "#f0e2cf",
+    filter: "sepia(0.28) brightness(1.1) saturate(0.9) contrast(0.98)",
+    tintOpacity: 0.32,
+    blendMode: "soft-light",
+  },
+  {
+    id: "blue",
+    name: "Blue",
+    hex: "#3b6fd9",
+    filter: "hue-rotate(195deg) saturate(1.25) brightness(0.95)",
+    tintOpacity: 0.4,
+    blendMode: "color",
+  },
+  {
+    id: "red",
+    name: "Product Red",
+    hex: "#c62828",
+    filter: "hue-rotate(330deg) saturate(1.45) brightness(0.92)",
+    tintOpacity: 0.42,
+    blendMode: "color",
+  },
+];
+
 type Props = {
   product: Product | null;
   onClose: () => void;
@@ -59,13 +121,16 @@ export function ProductQuickView({ product, onClose }: Props) {
   const [mounted, setMounted] = useState(false);
   const [activeImage, setActiveImage] = useState(0);
   const [qty, setQty] = useState(1);
-  const [color, setColor] = useState(0);
+  const [colorId, setColorId] = useState(COLOR_OPTIONS[0].id);
   const titleId = useId();
 
   const gallery = useMemo(
     () => (product ? buildGallery(product.image) : []),
     [product],
   );
+
+  const selectedColor =
+    COLOR_OPTIONS.find((option) => option.id === colorId) ?? COLOR_OPTIONS[0];
 
   const discount =
     product?.originalPrice && product.originalPrice > product.price
@@ -80,8 +145,13 @@ export function ProductQuickView({ product, onClose }: Props) {
     if (!product) return;
     setActiveImage(0);
     setQty(1);
-    setColor(0);
+    setColorId(COLOR_OPTIONS[0].id);
   }, [product]);
+
+  function selectColor(nextId: string) {
+    setColorId(nextId);
+    setActiveImage(0);
+  }
 
   useEffect(() => {
     if (!product) return;
@@ -120,14 +190,31 @@ export function ProductQuickView({ product, onClose }: Props) {
         </button>
 
         <div className={styles.gallery}>
-          <div className={styles.mainImage}>
-            <Image
-              src={gallery[activeImage] ?? product.image}
-              alt=""
-              fill
-              sizes="(max-width: 900px) 90vw, 420px"
-              priority
-            />
+          <div className={styles.mainImage} key={selectedColor.id}>
+            <div
+              className={styles.imageStage}
+              style={{ filter: selectedColor.filter }}
+            >
+              <Image
+                src={gallery[activeImage] ?? product.image}
+                alt={`${product.title} — ${selectedColor.name}`}
+                fill
+                sizes="(max-width: 900px) 90vw, 420px"
+                priority
+              />
+            </div>
+            {selectedColor.tintOpacity > 0 && (
+              <div
+                className={styles.colorTint}
+                style={{
+                  background: selectedColor.hex,
+                  opacity: selectedColor.tintOpacity,
+                  mixBlendMode: selectedColor.blendMode,
+                }}
+                aria-hidden
+              />
+            )}
+            <span className={styles.colorChip}>{selectedColor.name}</span>
           </div>
 
           <div className={styles.thumbsRow}>
@@ -151,7 +238,23 @@ export function ProductQuickView({ product, onClose }: Props) {
                   onClick={() => setActiveImage(index)}
                   aria-label={`View image ${index + 1}`}
                 >
-                  <Image src={src} alt="" fill sizes="72px" />
+                  <div
+                    className={styles.thumbStage}
+                    style={{ filter: selectedColor.filter }}
+                  >
+                    <Image src={src} alt="" fill sizes="72px" />
+                  </div>
+                  {selectedColor.tintOpacity > 0 && (
+                    <div
+                      className={styles.thumbTint}
+                      style={{
+                        background: selectedColor.hex,
+                        opacity: selectedColor.tintOpacity,
+                        mixBlendMode: selectedColor.blendMode,
+                      }}
+                      aria-hidden
+                    />
+                  )}
                 </button>
               ))}
             </div>
@@ -222,16 +325,21 @@ export function ProductQuickView({ product, onClose }: Props) {
           <div className={styles.options}>
             <div className={styles.optionRow}>
               <div className={styles.option}>
-                <span className={styles.optionLabel}>Color</span>
-                <div className={styles.swatches}>
-                  {["#c9cdd1", "#e8eaed"].map((hex, index) => (
+                <span className={styles.optionLabel}>
+                  Color: <strong>{selectedColor.name}</strong>
+                </span>
+                <div className={styles.swatches} role="radiogroup" aria-label="Product color">
+                  {COLOR_OPTIONS.map((option) => (
                     <button
-                      key={hex}
+                      key={option.id}
                       type="button"
-                      className={`${styles.swatch} ${color === index ? styles.swatchActive : ""}`}
-                      style={{ background: hex }}
-                      aria-label={`Color ${index + 1}`}
-                      onClick={() => setColor(index)}
+                      role="radio"
+                      aria-checked={colorId === option.id}
+                      className={`${styles.swatch} ${colorId === option.id ? styles.swatchActive : ""}`}
+                      style={{ background: option.hex }}
+                      aria-label={option.name}
+                      title={option.name}
+                      onClick={() => selectColor(option.id)}
                     />
                   ))}
                 </div>

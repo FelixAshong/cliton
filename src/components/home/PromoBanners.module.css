@@ -94,13 +94,28 @@
   }
 
   .card {
-    padding: 32px 24px;
+    padding: 28px 20px;
     min-height: auto;
+  }
+
+  .content h3 {
+    font-size: 22px;
+    line-height: 1.25;
   }
 }
 
 @media (max-width: 560px) {
   .card {
     grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .content {
+    max-width: none;
+  }
+
+  .image img {
+    max-width: 180px;
+    margin-inline: auto;
   }
 }
