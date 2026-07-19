@@ -210,6 +210,20 @@
   color: var(--purple);
 }
 
+.navItemActive {
+  color: #fa8232;
+  font-weight: 600;
+}
+
+.navItemActive:hover {
+  color: #fa8232;
+}
+
+.navItemActive .helpIcon {
+  border-color: #fa8232;
+  color: #fa8232;
+}
+
 .helpIcon {
   width: 22px;
   height: 22px;

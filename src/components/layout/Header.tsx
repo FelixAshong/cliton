@@ -1,13 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ArrowRightLeft,
-  Heart,
-  Headphones,
-  MapPin,
-  Phone,
-  Search,
-} from "lucide-react";
+import { Heart, Phone, Search } from "lucide-react";
 import {
   FacebookIcon,
   InstagramIcon,
@@ -16,6 +9,7 @@ import {
 } from "@/components/icons/SocialIcons";
 import { CartPopup } from "./CartPopup";
 import { CategoryMegaMenu } from "./CategoryMegaMenu";
+import { HeaderNavLinks } from "./HeaderNavLinks";
 import { PromoBanner } from "./PromoBanner";
 import { SignInPopup } from "./SignInPopup";
 import styles from "./Header.module.css";
@@ -102,18 +96,7 @@ export function Header() {
         <div className={`container ${styles.bottomInner}`}>
           <div className={styles.bottomLeft}>
             <CategoryMegaMenu />
-            <Link href="/track-order" className={styles.navItem}>
-              <MapPin size={22} strokeWidth={1.5} /> Track Order
-            </Link>
-            <Link href="/compare" className={styles.navItem}>
-              <ArrowRightLeft size={22} strokeWidth={1.5} /> Compare
-            </Link>
-            <Link href="/support" className={styles.navItem}>
-              <Headphones size={22} strokeWidth={1.5} /> Customer Support
-            </Link>
-            <Link href="/help" className={styles.navItem}>
-              <span className={styles.helpIcon}>?</span> Need Help
-            </Link>
+            <HeaderNavLinks />
           </div>
           <a href="tel:+233572273425" className={styles.phone}>
             <Phone size={22} strokeWidth={1.5} />

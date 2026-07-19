@@ -92,6 +92,21 @@ export const bestDeals: Product[] = [
 
 export const featuredProducts: Product[] = [
   {
+    id: "macbook-pro-m1",
+    title:
+      "2020 Apple MacBook Pro with Apple M1 Chip (13-inch, 8GB RAM, 256GB SSD Storage) - Space Gray",
+    image: "/images/products/macbook-pro.png",
+    price: 16990,
+    originalPrice: 19990,
+    badge: "sale",
+    badgeLabel: "21% OFF",
+    rating: 4.7,
+    reviews: 21671,
+    description:
+      "The most powerful MacBook Pro ever is here. With the blazing-fast M1 Pro or M1 Max chip — the first Apple silicon designed for pros — you get groundbreaking performance and amazing battery life.",
+    featured: true,
+  },
+  {
     id: "fp-1",
     title: "TOZO T6 True Wireless Earbuds Bluetooth Headphones",
     image: "/images/products/earbuds.png",
@@ -340,3 +355,25 @@ export const listProducts = {
     },
   ],
 };
+
+function uniqueById(items: Product[]) {
+  const map = new Map<string, Product>();
+  for (const item of items) {
+    if (!map.has(item.id)) map.set(item.id, item);
+  }
+  return Array.from(map.values());
+}
+
+export const allProducts: Product[] = uniqueById([
+  ...bestDeals,
+  ...featuredProducts,
+  ...computerAccessories,
+  ...listProducts.flashSale,
+  ...listProducts.bestSellers,
+  ...listProducts.topRated,
+  ...listProducts.newArrival,
+]);
+
+export function getProductById(id: string): Product | undefined {
+  return allProducts.find((product) => product.id === id);
+}

@@ -3,22 +3,24 @@ export type CartItem = {
   title: string;
   image: string;
   price: number;
+  originalPrice?: number;
   quantity: number;
 };
 
 export const cartItems: CartItem[] = [
   {
-    id: "cart-camera",
-    title: "Sony DSCHX8 High Zoom Point & Shoot Camera",
-    image: "/images/products/camera.png",
-    price: 8990,
+    id: "smart-tv-4k",
+    title: "4K UHD LED Smart TV with Chromecast Built-in",
+    image: "/images/products/tv.png",
+    price: 70,
+    originalPrice: 99,
     quantity: 1,
   },
   {
-    id: "cart-phone",
-    title: "Tecno Spark 20 — Dual SIM 4G Smartphone",
-    image: "/images/products/phone.png",
-    price: 1299,
-    quantity: 2,
+    id: "gaming-headphones",
+    title: "Wired Over-Ear Gaming Headphones with USB",
+    image: "/images/products/earbuds.png",
+    price: 250,
+    quantity: 3,
   },
 ];

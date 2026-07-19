@@ -98,16 +98,32 @@ export function Footer() {
               </div>
             ) : (
               <ul className={styles.links}>
-                {col.links.map((link) => (
-                  <li key={link}>
-                    <a href="#">{link === "Accessories" ? <strong>Accessories</strong> : link}</a>
-                  </li>
-                ))}
+                {col.links.map((link) => {
+                  const href =
+                    link === "Track Order"
+                      ? "/track-order"
+                      : link === "Compare"
+                        ? "/compare"
+                        : link === "Wishlist"
+                          ? "/wishlist"
+                          : link === "Shopping Cart"
+                            ? "/cart"
+                            : link === "Shop Product"
+                              ? "/shop"
+                              : "#";
+                  return (
+                    <li key={link}>
+                      <Link href={href}>
+                        {link === "Accessories" ? <strong>Accessories</strong> : link}
+                      </Link>
+                    </li>
+                  );
+                })}
                 {col.title === "Top Category" && (
                   <li>
-                    <a href="#" className={styles.browse}>
+                    <Link href="/shop" className={styles.browse}>
                       Browse All Product <ArrowRight size={16} />
-                    </a>
+                    </Link>
                   </li>
                 )}
               </ul>

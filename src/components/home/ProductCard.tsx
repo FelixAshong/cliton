@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { Eye, Heart, ShoppingCart, Star } from "lucide-react";
 import type { Product } from "@/data/products";
 import { useQuickView } from "@/components/product/QuickViewProvider";
@@ -25,7 +26,7 @@ function Stars({ rating, reviews, size = 14 }: { rating: number; reviews?: numbe
         <Star
           key={i}
           size={size}
-          fill={i < rating ? "#EBC80C" : "none"}
+          fill={i < Math.round(rating) ? "#EBC80C" : "none"}
           color="#EBC80C"
           aria-hidden
         />
@@ -37,6 +38,7 @@ function Stars({ rating, reviews, size = 14 }: { rating: number; reviews?: numbe
 
 export function ProductCard({ product, variant = "grid" }: Props) {
   const { openQuickView } = useQuickView();
+  const href = `/product/${product.id}`;
 
   const badgeClass =
     product.badge === "hot"
@@ -50,7 +52,7 @@ export function ProductCard({ product, variant = "grid" }: Props) {
   if (variant === "featured") {
     return (
       <article className={`${styles.card} ${styles.featured}`}>
-        <div className={styles.imageWrap}>
+        <Link href={href} className={styles.imageWrap}>
           <Image src={product.image} alt="" fill sizes="328px" />
           {(product.badge || product.badgeLabel) && (
             <div className={styles.badges}>
@@ -62,12 +64,14 @@ export function ProductCard({ product, variant = "grid" }: Props) {
               )}
             </div>
           )}
-        </div>
+        </Link>
         <div className={styles.body}>
           {product.rating && (
             <Stars rating={product.rating} reviews={product.reviews} size={18} />
           )}
-          <h3>{product.title}</h3>
+          <h3>
+            <Link href={href}>{product.title}</Link>
+          </h3>
           <div className={styles.prices}>
             {product.originalPrice && (
               <span className="price-old">{formatPrice(product.originalPrice)}</span>
@@ -99,11 +103,13 @@ export function ProductCard({ product, variant = "grid" }: Props) {
   if (variant === "compact") {
     return (
       <article className={`${styles.card} ${styles.compact}`}>
-        <div className={styles.compactImage}>
+        <Link href={href} className={styles.compactImage}>
           <Image src={product.image} alt="" width={80} height={80} />
-        </div>
+        </Link>
         <div>
-          <h3>{product.title}</h3>
+          <h3>
+            <Link href={href}>{product.title}</Link>
+          </h3>
           <div className={styles.prices}>
             {product.originalPrice && (
               <span className="price-old">{formatPrice(product.originalPrice)}</span>
@@ -118,7 +124,9 @@ export function ProductCard({ product, variant = "grid" }: Props) {
   return (
     <article className={`${styles.card} ${styles.grid}`}>
       <div className={styles.imageWrap}>
-        <Image src={product.image} alt="" fill sizes="248px" />
+        <Link href={href} className={styles.imageLink} aria-label={product.title}>
+          <Image src={product.image} alt="" fill sizes="248px" />
+        </Link>
         {product.badgeLabel && (
           <span className={`badge ${badgeClass} ${styles.corner}`}>{product.badgeLabel}</span>
         )}
@@ -142,7 +150,9 @@ export function ProductCard({ product, variant = "grid" }: Props) {
         {product.rating ? (
           <Stars rating={product.rating} reviews={product.reviews} />
         ) : null}
-        <h3>{product.title}</h3>
+        <h3>
+          <Link href={href}>{product.title}</Link>
+        </h3>
         <div className={styles.prices}>
           {product.originalPrice && (
             <span className="price-old">{formatPrice(product.originalPrice)}</span>

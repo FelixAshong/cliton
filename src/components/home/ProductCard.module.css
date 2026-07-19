@@ -38,6 +38,12 @@
   border-radius: 12px;
 }
 
+.imageLink {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
 .imageWrap img {
   object-fit: contain;
   padding: 12px;
@@ -107,6 +113,14 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   min-height: 40px;
+}
+
+.body h3 a {
+  color: inherit;
+}
+
+.body h3 a:hover {
+  color: var(--purple);
 }
 
 .prices {
@@ -227,4 +241,12 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   color: var(--text);
+}
+
+.compact h3 a {
+  color: inherit;
+}
+
+.compact h3 a:hover {
+  color: var(--purple);
 }
