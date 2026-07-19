@@ -35,12 +35,14 @@
 
 .panel {
   position: absolute;
-  top: calc(100% + 12px);
+  top: 100%;
   left: 0;
   z-index: 60;
   display: flex;
   align-items: flex-start;
-  gap: 0;
+  gap: 12px;
+  /* Invisible bridge so the cursor can move from the button into the menu */
+  padding-top: 12px;
   animation: menuIn 0.18s ease;
 }
 
@@ -92,7 +94,6 @@
 .flyout {
   display: flex;
   gap: 20px;
-  margin-left: 12px;
   padding: 20px;
   background: #ffffff;
   border: 1px solid var(--border);

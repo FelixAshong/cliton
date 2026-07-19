@@ -25,21 +25,43 @@ export function CategoryMegaMenu() {
   );
   const menuId = useId();
   const wrapRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const active = navCategories.find((c) => c.id === activeId) ?? navCategories[0];
   const showFlyout = active ? hasPanel(active) : false;
+
+  function clearCloseTimer() {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  }
+
+  function openMenu() {
+    clearCloseTimer();
+    setOpen(true);
+  }
+
+  function scheduleClose() {
+    clearCloseTimer();
+    closeTimer.current = setTimeout(() => setOpen(false), 150);
+  }
 
   useEffect(() => {
     if (!open) return;
 
     function onPointerDown(event: MouseEvent) {
       if (!wrapRef.current?.contains(event.target as Node)) {
+        clearCloseTimer();
         setOpen(false);
       }
     }
 
     function onKeyDown(event: KeyboardEvent) {
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        clearCloseTimer();
+        setOpen(false);
+      }
     }
 
     document.addEventListener("mousedown", onPointerDown);
@@ -50,12 +72,14 @@ export function CategoryMegaMenu() {
     };
   }, [open]);
 
+  useEffect(() => () => clearCloseTimer(), []);
+
   return (
     <div
       className={styles.wrap}
       ref={wrapRef}
-      onMouseEnter={() => setOpen(true)}
-      onMouseLeave={() => setOpen(false)}
+      onMouseEnter={openMenu}
+      onMouseLeave={scheduleClose}
     >
       <button
         type="button"
