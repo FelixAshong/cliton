@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRightLeft,
-  ChevronDown,
   Heart,
   Headphones,
   MapPin,
@@ -17,6 +16,7 @@ import {
   SnapchatIcon,
   TikTokIcon,
 } from "@/components/icons/SocialIcons";
+import { CategoryMegaMenu } from "./CategoryMegaMenu";
 import { PromoBanner } from "./PromoBanner";
 import styles from "./Header.module.css";
 
@@ -88,9 +88,7 @@ export function Header() {
       <div className={styles.bottomNav}>
         <div className={`container ${styles.bottomInner}`}>
           <div className={styles.bottomLeft}>
-            <button type="button" className={styles.categoryBtn}>
-              All Category <ChevronDown size={16} />
-            </button>
+            <CategoryMegaMenu />
             <Link href="/track-order" className={styles.navItem}>
               <MapPin size={22} strokeWidth={1.5} /> Track Order
             </Link>
