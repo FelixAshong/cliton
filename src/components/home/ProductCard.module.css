@@ -44,6 +44,7 @@
   object-fit: contain;
   padding: 12px;
   transition: transform 0.3s ease;
+  filter: drop-shadow(0 14px 24px rgba(18, 20, 31, 0.16));
 }
 
 .grid:hover .imageWrap img {

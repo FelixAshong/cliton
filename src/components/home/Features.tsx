@@ -4,13 +4,13 @@ import styles from "./Features.module.css";
 const features = [
   {
     icon: Package,
-    title: "Nationwide Delivery",
-    text: "Accra same-day · Ghana-wide shipping",
+    title: "Swap, Buy & Sell",
+    text: "Phones, laptops & accessories",
   },
   {
     icon: Trophy,
-    title: "7-Day Returns",
-    text: "Easy returns on eligible items",
+    title: "Visit Us",
+    text: "Sel Filling Station, UPSA",
   },
   {
     icon: CreditCard,
@@ -19,8 +19,8 @@ const features = [
   },
   {
     icon: Headphones,
-    title: "Support 24/7",
-    text: "Call or WhatsApp anytime",
+    title: "Call to Order",
+    text: "057 227 3425",
   },
 ];
 

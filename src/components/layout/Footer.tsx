@@ -64,13 +64,17 @@ export function Footer() {
           </Link>
           <div className={styles.contact}>
             <p className={styles.label}>Customer Support:</p>
-            <a href="tel:+233302555010">+233 30 255 5010</a>
+            <a href="tel:+233572273425">057 227 3425</a>
             <p>
-              15 Independence Avenue
+              Sel Filling Station, UPSA
               <br />
-              Ridge, Accra, Ghana
+              Accra, Ghana
             </p>
-            <a href="mailto:hello@techassure.com">hello@techassure.com</a>
+            <p className={styles.blurb}>
+              Phones, laptops and accessories. We swap, buy &amp; sell. For
+              purchases or enquiries, call{" "}
+              <a href="tel:+233572273425">057 227 3425</a>.
+            </p>
           </div>
         </div>
 
@@ -121,7 +125,10 @@ export function Footer() {
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>techassure © {new Date().getFullYear()}. Delivering tech across Ghana.</p>
+          <p>
+            techassure © {new Date().getFullYear()}. Phones, laptops &amp;
+            accessories — swap, buy &amp; sell at UPSA.
+          </p>
           <div className={styles.socials} aria-label="Social links">
             {["Tw", "Fb", "In", "Ig", "Yt"].map((label) => (
               <a key={label} href="#" className={styles.social} aria-label={label}>

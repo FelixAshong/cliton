@@ -41,6 +41,17 @@
   font-weight: 600;
 }
 
+.blurb {
+  line-height: 1.5;
+  max-width: 280px;
+}
+
+.blurb a {
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--purple);
+}
+
 .label {
   color: var(--text-dim);
   font-size: 13px;

@@ -9,8 +9,9 @@ export function Newsletter() {
       <div className={`container ${styles.inner}`}>
         <h2>Subscribe to our newsletter</h2>
         <p>
-          Get deals on phones, laptops and gadgets — plus delivery updates for Accra
-          and across Ghana.
+          Phones, laptops and accessories — we swap, buy &amp; sell. Call{" "}
+          <a href="tel:+233572273425">057 227 3425</a> · Sel Filling Station,
+          UPSA.
         </p>
         <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
           <input type="email" placeholder="Email address" required aria-label="Email" />

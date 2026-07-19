@@ -10,9 +10,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "techassure — Ghana Tech Store",
+  title: "techassure — Phones, Laptops & Accessories",
   description:
-    "techassure — buy phones, laptops, accessories and gadgets with delivery across Accra and Ghana.",
+    "Phones, laptops and accessories. We swap, buy & sell. Call 0572273425. Located at Sel Filling Station, UPSA.",
 };
 
 export default function RootLayout({

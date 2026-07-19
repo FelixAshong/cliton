@@ -34,7 +34,7 @@ export function Header() {
 
       <div className={styles.topBar}>
         <div className={`container ${styles.topInner}`}>
-          <p>Welcome to techassure — your online tech store.</p>
+          <p>Phones, laptops &amp; accessories — we swap, buy &amp; sell.</p>
           <div className={styles.topRight}>
             <div className={styles.follow}>
               <span>Follow us:</span>
@@ -104,9 +104,9 @@ export function Header() {
               <span className={styles.helpIcon}>?</span> Need Help
             </Link>
           </div>
-          <a href="tel:+233302555010" className={styles.phone}>
+          <a href="tel:+233572273425" className={styles.phone}>
             <Phone size={22} strokeWidth={1.5} />
-            +233 30 255 5010
+            057 227 3425
           </a>
         </div>
       </div>
