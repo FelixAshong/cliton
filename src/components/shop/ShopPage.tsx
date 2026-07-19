@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import {
   ArrowRight,
   ChevronLeft,
@@ -26,15 +27,21 @@ import styles from "./ShopPage.module.css";
 type SortKey = "popular" | "price-asc" | "price-desc" | "name";
 
 export function ShopPage() {
+  const searchParams = useSearchParams();
   const [category, setCategory] = useState<string>("Electronics Devices");
   const [pricePreset, setPricePreset] = useState("all");
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
-  const [brands, setBrands] = useState<string[]>(["Apple", "Google", "Microsoft", "HP"]);
-  const [activeTag, setActiveTag] = useState("Graphics Card");
+  const [brands, setBrands] = useState<string[]>([]);
+  const [activeTag, setActiveTag] = useState("");
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("popular");
   const [page, setPage] = useState(1);
+
+  useEffect(() => {
+    const q = searchParams.get("q");
+    if (q) setQuery(q);
+  }, [searchParams]);
 
   const preset = pricePresets.find((p) => p.id === pricePreset) ?? pricePresets[0];
 
@@ -48,17 +55,14 @@ export function ShopPage() {
         category === "Electronics Devices" || product.category === category;
       const inPrice = product.price >= min && product.price <= max;
       const inBrand = brands.length === 0 || brands.includes(product.brand);
-      const inTag = !activeTag || product.tags.includes(activeTag) || category === "Electronics Devices";
       const inQuery =
         !q ||
         product.title.toLowerCase().includes(q) ||
         product.brand.toLowerCase().includes(q);
 
-      // Soft tag filter: if tag selected and no matches, still show category matches
-      return inCategory && inPrice && inBrand && inQuery && (inTag || true);
+      return inCategory && inPrice && inBrand && inQuery;
     });
 
-    // Prefer tag matches when a tag is active
     if (activeTag) {
       const tagged = items.filter((p) => p.tags.includes(activeTag));
       if (tagged.length > 0) items = tagged;
@@ -78,8 +82,8 @@ export function ShopPage() {
   const activeFilters = [
     category !== "Electronics Devices" ? category : null,
     pricePreset !== "all" ? preset.label : null,
-    ...brands.slice(0, 2),
-    activeTag,
+    ...brands,
+    activeTag || null,
   ].filter(Boolean) as string[];
 
   function toggleBrand(brand: string) {
@@ -223,13 +227,20 @@ export function ShopPage() {
           <aside className={styles.promo}>
             <div className={styles.promoImage}>
               <Image
-                src="/images/products/earbuds.png"
+                src="/images/shop/watch-promo.png"
                 alt=""
                 fill
                 sizes="180px"
               />
             </div>
-            <p className={styles.promoBrand}>techassure picks</p>
+            <div className={styles.promoLogo}>
+              <Image
+                src="/images/shop/apple-watch-logo.png"
+                alt="Apple Watch Series"
+                width={132}
+                height={51}
+              />
+            </div>
             <h3>Heavy on Features. Light on Price.</h3>
             <div className={styles.promoPrice}>
               <span>Only for:</span>

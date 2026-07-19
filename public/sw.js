@@ -1,5 +1,5 @@
-const CACHE_NAME = "techassure-v1";
-const PRECACHE = ["/", "/icons/icon-192.png", "/icons/icon-512.png"];
+const CACHE_NAME = "techassure-v2";
+const PRECACHE = ["/icons/icon-192.png", "/icons/icon-512.png"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -22,6 +22,28 @@ self.addEventListener("fetch", (event) => {
   const { request } = event;
   if (request.method !== "GET") return;
 
+  const url = new URL(request.url);
+
+  // Let Next.js / HMR / RSC traffic pass through untouched
+  if (
+    url.pathname.startsWith("/_next/") ||
+    url.pathname.includes("hot-update") ||
+    url.pathname.startsWith("/__next")
+  ) {
+    return;
+  }
+
+  // Always prefer network for navigations so pages stay fresh
+  if (request.mode === "navigate") {
+    event.respondWith(
+      fetch(request)
+        .then((response) => response)
+        .catch(() => caches.match("/") || caches.match(request)),
+    );
+    return;
+  }
+
+  // Cache-first only for static assets
   event.respondWith(
     caches.match(request).then((cached) => {
       const network = fetch(request)

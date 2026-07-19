@@ -115,13 +115,6 @@ export function Footer() {
             techassure © {new Date().getFullYear()}. Phones, laptops &amp;
             accessories — swap, buy &amp; sell at UPSA.
           </p>
-          <div className={styles.socials} aria-label="Social links">
-            {["Tw", "Fb", "In", "Ig", "Yt"].map((label) => (
-              <a key={label} href="#" className={styles.social} aria-label={label}>
-                {label}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>

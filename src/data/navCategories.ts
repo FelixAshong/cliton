@@ -26,7 +26,7 @@ export const navCategories: NavCategory[] = [
   {
     id: "laptop",
     name: "Computer & Laptop",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured laptops",
     brands: ["All", "Apple", "Dell", "HP", "Lenovo", "Asus", "Acer", "Microsoft"],
     featured: [
@@ -55,13 +55,13 @@ export const navCategories: NavCategory[] = [
       description: "Power through work and school with our latest MacBook deals.",
       priceLabel: "GH₵14,990",
       image: "/images/products/macbook-m4.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "accessories",
     name: "Computer Accessories",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured accessories",
     brands: ["All", "Logitech", "Belkin", "Anker", "Samsung", "JBL", "Apple"],
     featured: [
@@ -90,13 +90,13 @@ export const navCategories: NavCategory[] = [
       description: "Upgrade your desk setup with keyboards, hubs, and more.",
       priceLabel: "GH₵180",
       image: "/images/categories/accessories.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "phone",
     name: "SmartPhone",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured phones",
     brands: [
       "All",
@@ -137,13 +137,13 @@ export const navCategories: NavCategory[] = [
       description: "Escape the noise — hear the magic with wireless earbuds.",
       priceLabel: "GH₵450",
       image: "/images/products/earbuds.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "headphones",
     name: "Headphone",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured headphones",
     brands: ["All", "Sony", "JBL", "Bose", "Apple", "Samsung", "TOZO"],
     featured: [
@@ -172,13 +172,13 @@ export const navCategories: NavCategory[] = [
       description: "Immersive sound for music, calls, and gaming on the go.",
       priceLabel: "GH₵450",
       image: "/images/products/earbuds.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "mobile-accessories",
     name: "Mobile Accessories",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured accessories",
     brands: ["All", "Cases", "Chargers", "Power Banks", "Cables", "Screen Protectors"],
     featured: [
@@ -207,13 +207,13 @@ export const navCategories: NavCategory[] = [
       description: "Stay powered all day with our best-selling power banks.",
       priceLabel: "GH₵320",
       image: "/images/products/carb.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "gaming",
     name: "Gaming Console",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured consoles",
     brands: ["All", "PlayStation", "Xbox", "Nintendo", "Steam Deck"],
     featured: [
@@ -242,13 +242,13 @@ export const navCategories: NavCategory[] = [
       description: "Next-gen gaming with faster load times and sharper visuals.",
       priceLabel: "GH₵6,630",
       image: "/images/products/ps5.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "camera",
     name: "Camera & Photo",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured cameras",
     brands: ["All", "Sony", "Canon", "Nikon", "GoPro", "DJI"],
     featured: [
@@ -277,13 +277,13 @@ export const navCategories: NavCategory[] = [
       description: "Capture every moment with pro-ready cameras and gear.",
       priceLabel: "GH₵8,990",
       image: "/images/products/camera.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "tv",
     name: "TV & Homes Appliances",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured home tech",
     brands: ["All", "Samsung", "LG", "Sony", "Hisense", "TCL"],
     featured: [
@@ -313,13 +313,13 @@ export const navCategories: NavCategory[] = [
       description: "Bring cinema home with our 4K smart TVs and appliances.",
       priceLabel: "GH₵4,590",
       image: "/images/products/tv.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "watches",
     name: "Watches & Accessories",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured watches",
     brands: ["All", "Apple", "Samsung", "Huawei", "Garmin", "Fitbit"],
     featured: [
@@ -348,13 +348,13 @@ export const navCategories: NavCategory[] = [
       description: "Track fitness and stay connected with smart wearables.",
       priceLabel: "GH₵1,290",
       image: "/images/hero/earbuds.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "gps",
     name: "GPS & Navigation",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured navigation",
     brands: ["All", "Garmin", "TomTom", "Google", "Apple"],
     featured: [
@@ -382,13 +382,13 @@ export const navCategories: NavCategory[] = [
       description: "Find your way with reliable GPS and navigation devices.",
       priceLabel: "GH₵4,990",
       image: "/images/hero/pixel.png",
-      href: "#products",
+      href: "/shop",
     },
   },
   {
     id: "wearable",
     name: "Wearable Technology",
-    href: "#products",
+    href: "/shop",
     featuredTitle: "Featured wearables",
     brands: ["All", "Apple", "Samsung", "Fitbit", "Garmin", "Xiaomi"],
     featured: [
@@ -417,7 +417,7 @@ export const navCategories: NavCategory[] = [
       description: "Wearable tech that keeps you moving, listening, and connected.",
       priceLabel: "GH₵450",
       image: "/images/products/earbuds.png",
-      href: "#products",
+      href: "/shop",
     },
   },
 ];

@@ -18,7 +18,7 @@ export function Categories() {
           </button>
           <div className={styles.track}>
             {categories.map((cat) => (
-              <a key={cat.id} href="#products" className={styles.card}>
+              <a key={cat.id} href="/shop" className={styles.card}>
                 <div className={styles.image}>
                   <Image src={cat.image} alt={cat.name} width={148} height={148} />
                 </div>

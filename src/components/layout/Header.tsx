@@ -63,8 +63,18 @@ export function Header() {
             />
           </Link>
 
-          <form className={styles.search} role="search">
-            <input type="search" placeholder="Search for anything..." aria-label="Search" />
+          <form
+            className={styles.search}
+            role="search"
+            action="/shop"
+            method="get"
+          >
+            <input
+              type="search"
+              name="q"
+              placeholder="Search for anything..."
+              aria-label="Search"
+            />
             <button type="submit" aria-label="Submit search">
               <Search size={20} />
             </button>

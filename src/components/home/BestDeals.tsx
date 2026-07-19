@@ -26,7 +26,7 @@ export function BestDeals() {
               </div>
             </div>
           </div>
-          <a href="#products" className="btn btn-link">
+          <a href="/shop" className="btn btn-link">
             Browse All Product <ArrowRight size={18} />
           </a>
         </div>
