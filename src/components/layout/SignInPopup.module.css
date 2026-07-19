@@ -1,0 +1,265 @@
+.wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.trigger {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.trigger:hover,
+.triggerOpen {
+  transform: translateY(-2px);
+  border-color: rgba(123, 47, 247, 0.3);
+  color: var(--purple);
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 120;
+  background: transparent;
+}
+
+.panel {
+  position: fixed;
+  z-index: 130;
+  box-sizing: border-box;
+  width: 424px;
+  max-width: calc(100vw - 32px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 32px;
+  background: #ffffff;
+  border: 1px solid var(--border-strong);
+  border-radius: 8px;
+  box-shadow: 0 16px 48px rgba(18, 20, 31, 0.16);
+  animation: panelIn 0.18s ease;
+}
+
+@keyframes panelIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.formBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  text-align: center;
+  color: var(--text);
+}
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.labelRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+}
+
+.label {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--text);
+}
+
+.forgot {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  color: var(--blue);
+  white-space: nowrap;
+}
+
+.forgot:hover {
+  color: var(--purple);
+}
+
+.inputWrap {
+  position: relative;
+  width: 100%;
+}
+
+.input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  height: 44px;
+  margin: 0;
+  padding: 0 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  background: #ffffff;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 20px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.inputWithIcon {
+  padding-right: 44px;
+}
+
+.input:focus {
+  border-color: var(--purple);
+}
+
+.eye {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  color: var(--text-dim);
+  border-radius: 4px;
+}
+
+.eye:hover {
+  color: var(--text);
+  background: var(--gray-50);
+}
+
+.login {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  height: 48px;
+  margin: 0;
+  padding: 0 24px;
+  background: var(--brand-gradient);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  transition: filter 0.2s ease;
+}
+
+.login:hover {
+  filter: brightness(1.05);
+  transform: none;
+}
+
+.createBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  color: var(--text-dim);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.divider span {
+  flex-shrink: 0;
+  padding: 0 8px;
+  background: #ffffff;
+}
+
+.create {
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  padding: 0 24px;
+  border: 2px solid rgba(123, 47, 247, 0.2);
+  border-radius: 4px;
+  color: var(--purple);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: #ffffff;
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease;
+}
+
+.create:hover {
+  background: rgba(123, 47, 247, 0.06);
+  border-color: rgba(123, 47, 247, 0.4);
+  transform: none;
+}
+
+@media (max-width: 520px) {
+  .panel {
+    top: 50% !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translate(-50%, -50%);
+    width: calc(100vw - 32px);
+    max-height: calc(100vh - 48px);
+    overflow: auto;
+    animation: none;
+  }
+
+  .backdrop {
+    background: rgba(18, 20, 31, 0.35);
+  }
+}

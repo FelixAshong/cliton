@@ -8,7 +8,6 @@ import {
   Phone,
   Search,
   ShoppingCart,
-  User,
 } from "lucide-react";
 import {
   FacebookIcon,
@@ -18,6 +17,7 @@ import {
 } from "@/components/icons/SocialIcons";
 import { CategoryMegaMenu } from "./CategoryMegaMenu";
 import { PromoBanner } from "./PromoBanner";
+import { SignInPopup } from "./SignInPopup";
 import styles from "./Header.module.css";
 
 const socials = [
@@ -78,9 +78,7 @@ export function Header() {
             <Link href="/wishlist" aria-label="Wishlist">
               <Heart size={28} strokeWidth={1.5} />
             </Link>
-            <Link href="/account" aria-label="Account">
-              <User size={28} strokeWidth={1.5} />
-            </Link>
+            <SignInPopup />
           </div>
         </div>
       </div>
