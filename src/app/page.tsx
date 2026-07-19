@@ -4,6 +4,7 @@ import { Newsletter } from "@/components/layout/Newsletter";
 import { Hero } from "@/components/home/Hero";
 import { Features } from "@/components/home/Features";
 import { FlyerSlideshow } from "@/components/home/FlyerSlideshow";
+import { BrandMarquee } from "@/components/home/BrandMarquee";
 import { BestDeals } from "@/components/home/BestDeals";
 import { Categories } from "@/components/home/Categories";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
@@ -20,6 +21,7 @@ export default function HomePage() {
         <Hero />
         <Features />
         <FlyerSlideshow />
+        <BrandMarquee />
         <BestDeals />
         <Categories />
         <FeaturedProducts />
