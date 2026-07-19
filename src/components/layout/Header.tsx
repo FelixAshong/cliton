@@ -59,7 +59,15 @@ export function Header() {
               width={200}
               height={47}
               priority
-              className={styles.logoImg}
+              className={styles.logoWordmark}
+            />
+            <Image
+              src="/icons/icon-192.png"
+              alt="techassure"
+              width={40}
+              height={40}
+              priority
+              className={styles.logoIcon}
             />
           </Link>
 

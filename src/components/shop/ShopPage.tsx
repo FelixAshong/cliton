@@ -9,6 +9,8 @@ import {
   ChevronLeft,
   ChevronRight,
   Home,
+  LayoutGrid,
+  Rows3,
   Search,
   ShoppingCart,
   X,
@@ -25,6 +27,7 @@ import {
 import styles from "./ShopPage.module.css";
 
 type SortKey = "popular" | "price-asc" | "price-desc" | "name";
+type LayoutMode = "grid" | "list";
 
 export function ShopPage() {
   const searchParams = useSearchParams();
@@ -37,6 +40,7 @@ export function ShopPage() {
   const [query, setQuery] = useState("");
   const [sort, setSort] = useState<SortKey>("popular");
   const [page, setPage] = useState(1);
+  const [layout, setLayout] = useState<LayoutMode>("grid");
 
   useEffect(() => {
     const q = searchParams.get("q");
@@ -278,21 +282,43 @@ export function ShopPage() {
               />
               <Search size={20} aria-hidden />
             </form>
-            <label className={styles.sort}>
-              <span>Sort by:</span>
-              <select
-                value={sort}
-                onChange={(e) => {
-                  setSort(e.target.value as SortKey);
-                  setPage(1);
-                }}
-              >
-                <option value="popular">Most Popular</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-                <option value="name">Name</option>
-              </select>
-            </label>
+            <div className={styles.toolbarRow}>
+              <label className={styles.sort}>
+                <span>Sort by:</span>
+                <select
+                  value={sort}
+                  onChange={(e) => {
+                    setSort(e.target.value as SortKey);
+                    setPage(1);
+                  }}
+                >
+                  <option value="popular">Most Popular</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="name">Name</option>
+                </select>
+              </label>
+              <div className={styles.layoutToggle} role="group" aria-label="Product layout">
+                <button
+                  type="button"
+                  className={layout === "grid" ? styles.layoutActive : undefined}
+                  aria-pressed={layout === "grid"}
+                  aria-label="Grid view"
+                  onClick={() => setLayout("grid")}
+                >
+                  <LayoutGrid size={18} />
+                </button>
+                <button
+                  type="button"
+                  className={layout === "list" ? styles.layoutActive : undefined}
+                  aria-pressed={layout === "list"}
+                  aria-label="List view"
+                  onClick={() => setLayout("list")}
+                >
+                  <Rows3 size={18} />
+                </button>
+              </div>
+            </div>
           </div>
 
           <div className={styles.activeBar}>
@@ -313,7 +339,9 @@ export function ShopPage() {
             <p>{filtered.length.toLocaleString("en-GH")} Results found.</p>
           </div>
 
-          <div className={styles.grid}>
+          <div
+            className={`${styles.grid} ${layout === "list" ? styles.gridList : styles.gridCols}`}
+          >
             {pageItems.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}

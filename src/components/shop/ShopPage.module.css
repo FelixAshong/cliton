@@ -354,6 +354,36 @@
   outline: none;
 }
 
+.layoutToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  background: #fff;
+  margin-left: auto;
+}
+
+.layoutToggle button {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: var(--text-muted);
+}
+
+.layoutToggle button:hover {
+  color: var(--purple);
+  background: rgba(123, 47, 247, 0.06);
+}
+
+.layoutActive {
+  color: var(--purple) !important;
+  background: rgba(123, 47, 247, 0.1) !important;
+}
+
 .activeBar {
   display: flex;
   flex-wrap: wrap;
@@ -389,8 +419,15 @@
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+}
+
+.gridCols {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.gridList {
+  grid-template-columns: 1fr;
 }
 
 .empty {
@@ -442,7 +479,7 @@
     grid-template-columns: 260px minmax(0, 1fr);
   }
 
-  .grid {
+  .gridCols {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
@@ -462,7 +499,7 @@
     grid-column: 1 / -1;
   }
 
-  .grid {
+  .gridCols {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -472,7 +509,13 @@
     grid-template-columns: 1fr;
   }
 
-  .grid {
+  /* Default mobile stays 2-column grid; list mode is single column */
+  .gridCols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gridList {
     grid-template-columns: 1fr;
   }
 
@@ -481,8 +524,25 @@
     align-items: stretch;
   }
 
+  .toolbarRow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
   .search,
-  .sort select {
+  .sort {
     width: 100%;
+  }
+
+  .sort select {
+    flex: 1;
+    min-width: 0;
+    width: auto;
+  }
+
+  .layoutToggle {
+    margin-left: 0;
+    flex-shrink: 0;
   }
 }

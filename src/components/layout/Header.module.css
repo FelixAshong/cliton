@@ -81,12 +81,20 @@
   height: 44px;
 }
 
-.logoImg {
+.logoWordmark {
   height: 44px;
   width: auto;
   max-width: 210px;
   object-fit: contain;
   display: block;
+}
+
+.logoIcon {
+  display: none;
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 10px;
 }
 
 .search {
@@ -240,9 +248,12 @@
     padding: 10px 14px;
   }
 
-  .logoImg {
-    height: 36px;
-    max-width: 150px;
+  .logoWordmark {
+    display: none;
+  }
+
+  .logoIcon {
+    display: block;
   }
 
   .bottomInner {

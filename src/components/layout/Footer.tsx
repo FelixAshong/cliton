@@ -59,7 +59,14 @@ export function Footer() {
               alt="techassure"
               width={180}
               height={42}
-              className={styles.logoImg}
+              className={styles.logoWordmark}
+            />
+            <Image
+              src="/icons/icon-192.png"
+              alt="techassure"
+              width={40}
+              height={40}
+              className={styles.logoIcon}
             />
           </Link>
           <div className={styles.contact}>
