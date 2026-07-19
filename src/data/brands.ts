@@ -4,20 +4,15 @@ export type Brand = {
   src: string;
 };
 
-/** Brand marks shown in the sliding strip. Files live in /public/images/brands. */
+/** Brand marks from uploaded assets in /public/images/brands */
 export const brands: Brand[] = [
-  { id: "apple", name: "Apple", src: "/images/brands/apple.svg" },
-  { id: "samsung", name: "Samsung", src: "/images/brands/samsung.svg" },
-  { id: "sony", name: "Sony", src: "/images/brands/sony.svg" },
-  { id: "lg", name: "LG", src: "/images/brands/lg.svg" },
-  { id: "dell", name: "Dell", src: "/images/brands/dell.svg" },
-  { id: "hp", name: "HP", src: "/images/brands/hp.svg" },
-  { id: "lenovo", name: "Lenovo", src: "/images/brands/lenovo.svg" },
-  { id: "asus", name: "ASUS", src: "/images/brands/asus.svg" },
-  { id: "microsoft", name: "Microsoft", src: "/images/brands/microsoft.svg" },
-  { id: "xiaomi", name: "Xiaomi", src: "/images/brands/xiaomi.svg" },
-  { id: "google", name: "Google", src: "/images/brands/google.svg" },
-  { id: "jbl", name: "JBL", src: "/images/brands/jbl.svg" },
-  { id: "acer", name: "Acer", src: "/images/brands/acer.svg" },
-  { id: "nintendo", name: "Nintendo", src: "/images/brands/nintendo.svg" },
+  { id: "sigma", name: "Sigma Appliances", src: "/images/brands/sigma.png" },
+  { id: "lg", name: "LG", src: "/images/brands/lg.png" },
+  { id: "tecno", name: "TECNO", src: "/images/brands/tecno.png" },
+  { id: "jbl", name: "JBL", src: "/images/brands/jbl.png" },
+  { id: "samsung", name: "Samsung", src: "/images/brands/samsung.png" },
+  { id: "dell", name: "Dell", src: "/images/brands/dell.png" },
+  { id: "grandstream", name: "Grandstream", src: "/images/brands/grandstream.png" },
+  { id: "apple", name: "Apple", src: "/images/brands/apple.png" },
+  { id: "belkin", name: "Belkin", src: "/images/brands/belkin.png" },
 ];
