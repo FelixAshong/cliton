@@ -123,20 +123,33 @@
 
   .banner {
     min-height: auto;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    text-align: left;
+    flex-direction: column;
+    text-align: center;
     align-items: center;
+    padding: 24px 20px;
+  }
+
+  .banner h3 {
+    font-size: 26px;
+    line-height: 1.2;
+  }
+
+  .bannerImage img {
+    max-height: 200px;
   }
 
   .grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
   }
 }
 
 @media (max-width: 560px) {
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .banner h3 {
+    font-size: 22px;
   }
 }

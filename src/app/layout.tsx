@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
 import { SiteGate } from "@/components/layout/SiteGate";
+import { QuickViewProvider } from "@/components/product/QuickViewProvider";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -23,8 +24,10 @@ export default function RootLayout({
   return (
     <html lang="en-GH" className={outfit.variable}>
       <body>
-        <SiteGate />
-        {children}
+        <QuickViewProvider>
+          <SiteGate />
+          {children}
+        </QuickViewProvider>
       </body>
     </html>
   );

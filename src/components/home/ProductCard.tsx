@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { Eye, Heart, ShoppingCart, Star } from "lucide-react";
 import type { Product } from "@/data/products";
+import { useQuickView } from "@/components/product/QuickViewProvider";
 import styles from "./ProductCard.module.css";
 
 function formatPrice(n: number) {
@@ -33,6 +36,8 @@ function Stars({ rating, reviews, size = 14 }: { rating: number; reviews?: numbe
 }
 
 export function ProductCard({ product, variant = "grid" }: Props) {
+  const { openQuickView } = useQuickView();
+
   const badgeClass =
     product.badge === "hot"
       ? "badge-hot"
@@ -78,7 +83,12 @@ export function ProductCard({ product, variant = "grid" }: Props) {
           <button type="button" className={`btn btn-primary ${styles.add}`}>
             <ShoppingCart size={18} /> Add to cart
           </button>
-          <button type="button" className="btn btn-soft" aria-label="Quick view">
+          <button
+            type="button"
+            className="btn btn-soft"
+            aria-label="Quick view"
+            onClick={() => openQuickView(product)}
+          >
             <Eye size={22} />
           </button>
         </div>
@@ -119,7 +129,11 @@ export function ProductCard({ product, variant = "grid" }: Props) {
           <button type="button" aria-label="Add to cart">
             <ShoppingCart size={20} />
           </button>
-          <button type="button" aria-label="Quick view">
+          <button
+            type="button"
+            aria-label="Quick view"
+            onClick={() => openQuickView(product)}
+          >
             <Eye size={20} />
           </button>
         </div>

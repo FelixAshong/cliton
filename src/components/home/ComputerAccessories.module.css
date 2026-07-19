@@ -252,6 +252,29 @@
 
   .tabs {
     justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    max-width: 100%;
+    padding-bottom: 2px;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab,
+  .activeTab {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+
+  .browse {
+    justify-self: start;
+  }
+
+  .title {
+    font-size: 22px;
   }
 }
 
@@ -262,5 +285,22 @@
 
   .grid {
     grid-template-columns: 1fr;
+  }
+
+  .promoPrimary {
+    min-height: 0;
+    padding: 24px 20px 160px;
+  }
+
+  .promoPrimary h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    max-width: none;
+  }
+
+  .promoImage {
+    width: 140px;
+    height: 180px;
+    right: 8px;
   }
 }

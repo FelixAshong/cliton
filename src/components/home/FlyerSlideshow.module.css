@@ -226,29 +226,37 @@
     margin-inline: auto;
     width: 100%;
     min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .productCard {
-    padding: 36px 28px;
+    padding: 28px 24px;
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .productContent h3 {
-    font-size: 48px;
+    font-size: clamp(28px, 8vw, 40px);
   }
 
   .productContent p {
-    font-size: 18px;
+    font-size: 15px;
+  }
+
+  .productImage {
+    justify-self: center;
+    width: min(100%, 320px);
   }
 
   .productImage img {
-    width: min(100%, 560px);
+    width: 100%;
   }
 
   .price {
-    width: 96px;
-    height: 96px;
-    min-width: 96px;
-    font-size: 14px;
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    font-size: 12px;
     top: 0;
     right: 0;
   }
@@ -256,16 +264,24 @@
 
 @media (max-width: 560px) {
   .section {
-    padding-block: 36px;
+    padding-block: 28px;
   }
 
   .productCard {
-    grid-template-columns: 1fr;
-    text-align: left;
+    padding: 22px 18px;
+  }
+
+  .productContent {
+    gap: 12px;
+  }
+
+  .productContent :global(.badge) {
+    font-size: 11px;
+    padding: 6px 10px;
   }
 
   .productImage {
     order: -1;
-    justify-self: center;
+    width: min(100%, 260px);
   }
 }
