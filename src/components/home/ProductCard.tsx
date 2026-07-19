@@ -15,6 +15,23 @@ type Props = {
   variant?: "grid" | "featured" | "compact";
 };
 
+function Stars({ rating, reviews, size = 14 }: { rating: number; reviews?: number; size?: number }) {
+  return (
+    <div className={styles.rating} aria-label={`Rated ${rating} out of 5`}>
+      {Array.from({ length: 5 }).map((_, i) => (
+        <Star
+          key={i}
+          size={size}
+          fill={i < rating ? "#EBC80C" : "none"}
+          color="#EBC80C"
+          aria-hidden
+        />
+      ))}
+      {typeof reviews === "number" && <span>({reviews.toLocaleString("en-GH")})</span>}
+    </div>
+  );
+}
+
 export function ProductCard({ product, variant = "grid" }: Props) {
   const badgeClass =
     product.badge === "hot"
@@ -29,7 +46,7 @@ export function ProductCard({ product, variant = "grid" }: Props) {
     return (
       <article className={`${styles.card} ${styles.featured}`}>
         <div className={styles.imageWrap}>
-          <Image src={product.image} alt={product.title} fill sizes="328px" />
+          <Image src={product.image} alt="" fill sizes="328px" />
           {(product.badge || product.badgeLabel) && (
             <div className={styles.badges}>
               {product.badgeLabel && (
@@ -43,17 +60,7 @@ export function ProductCard({ product, variant = "grid" }: Props) {
         </div>
         <div className={styles.body}>
           {product.rating && (
-            <div className={styles.rating}>
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  size={18}
-                  fill={i < (product.rating ?? 0) ? "#EBC80C" : "none"}
-                  color="#EBC80C"
-                />
-              ))}
-              <span>({product.reviews?.toLocaleString()})</span>
-            </div>
+            <Stars rating={product.rating} reviews={product.reviews} size={18} />
           )}
           <h3>{product.title}</h3>
           <div className={styles.prices}>
@@ -69,7 +76,7 @@ export function ProductCard({ product, variant = "grid" }: Props) {
             <Heart size={22} />
           </button>
           <button type="button" className={`btn btn-primary ${styles.add}`}>
-            <ShoppingCart size={18} /> Add to card
+            <ShoppingCart size={18} /> Add to cart
           </button>
           <button type="button" className="btn btn-soft" aria-label="Quick view">
             <Eye size={22} />
@@ -83,7 +90,7 @@ export function ProductCard({ product, variant = "grid" }: Props) {
     return (
       <article className={`${styles.card} ${styles.compact}`}>
         <div className={styles.compactImage}>
-          <Image src={product.image} alt={product.title} width={80} height={80} />
+          <Image src={product.image} alt="" width={80} height={80} />
         </div>
         <div>
           <h3>{product.title}</h3>
@@ -101,12 +108,12 @@ export function ProductCard({ product, variant = "grid" }: Props) {
   return (
     <article className={`${styles.card} ${styles.grid}`}>
       <div className={styles.imageWrap}>
-        <Image src={product.image} alt={product.title} fill sizes="248px" />
+        <Image src={product.image} alt="" fill sizes="248px" />
         {product.badgeLabel && (
           <span className={`badge ${badgeClass} ${styles.corner}`}>{product.badgeLabel}</span>
         )}
         <div className={styles.hoverActions}>
-          <button type="button" aria-label="Wishlist">
+          <button type="button" aria-label="Add to wishlist">
             <Heart size={20} />
           </button>
           <button type="button" aria-label="Add to cart">
@@ -118,19 +125,9 @@ export function ProductCard({ product, variant = "grid" }: Props) {
         </div>
       </div>
       <div className={styles.body}>
-        {product.rating && (
-          <div className={styles.rating}>
-            {Array.from({ length: 5 }).map((_, i) => (
-              <Star
-                key={i}
-                size={14}
-                fill={i < (product.rating ?? 0) ? "#EBC80C" : "none"}
-                color="#EBC80C"
-              />
-            ))}
-            <span>({product.reviews})</span>
-          </div>
-        )}
+        {product.rating ? (
+          <Stars rating={product.rating} reviews={product.reviews} />
+        ) : null}
         <h3>{product.title}</h3>
         <div className={styles.prices}>
           {product.originalPrice && (

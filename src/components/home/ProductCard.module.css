@@ -9,12 +9,13 @@
   flex-direction: column;
   height: 100%;
   overflow: hidden;
-  transition: box-shadow 0.25s ease, border-color 0.25s ease;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, z-index 0s;
 }
 
 .grid:hover {
   border-color: var(--primary-500);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  z-index: 1;
 }
 
 .grid:hover .hoverActions {
@@ -24,21 +25,24 @@
 
 .imageWrap {
   position: relative;
-  aspect-ratio: 216 / 188;
-  margin: 16px;
+  aspect-ratio: 1;
+  margin: 12px 12px 8px;
   background: var(--gray-50);
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
 .imageWrap img {
   object-fit: contain;
-  padding: 8px;
+  padding: 12px;
 }
 
 .corner {
   position: absolute;
-  top: -4px;
-  left: -4px;
+  top: 8px;
+  left: 8px;
   z-index: 2;
+  pointer-events: none;
 }
 
 .hoverActions {
@@ -54,8 +58,8 @@
 }
 
 .hoverActions button {
-  width: 48px;
-  height: 48px;
+  width: 44px;
+  height: 44px;
   border-radius: 100px;
   background: white;
   color: var(--gray-900);
@@ -70,10 +74,11 @@
 }
 
 .body {
-  padding: 0 16px 16px;
+  padding: 8px 16px 16px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
+  flex: 1;
 }
 
 .body h3 {
@@ -85,13 +90,15 @@
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  min-height: 40px;
 }
 
 .prices {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 6px;
   font-size: 14px;
+  margin-top: auto;
 }
 
 .priceLg {
@@ -103,7 +110,7 @@
   align-items: center;
   gap: 2px;
   color: var(--gray-500);
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .featured {
@@ -127,17 +134,19 @@
 .featured .body h3 {
   font-size: 16px;
   line-height: 24px;
+  min-height: 0;
   -webkit-line-clamp: 2;
 }
 
 .badges {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 8px;
+  left: 8px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   z-index: 2;
+  pointer-events: none;
 }
 
 .desc {
@@ -172,6 +181,8 @@
   background: var(--gray-50);
   display: grid;
   place-items: center;
+  overflow: hidden;
+  border-radius: var(--radius);
 }
 
 .compactImage img {

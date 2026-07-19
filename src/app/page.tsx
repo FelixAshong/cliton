@@ -7,6 +7,7 @@ import { BestDeals } from "@/components/home/BestDeals";
 import { Categories } from "@/components/home/Categories";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
 import { PromoBanners } from "@/components/home/PromoBanners";
+import { ComputerAccessories } from "@/components/home/ComputerAccessories";
 import { WideBanner } from "@/components/home/WideBanner";
 import { ProductLists } from "@/components/home/ProductLists";
 
@@ -21,17 +22,7 @@ export default function HomePage() {
         <Categories />
         <FeaturedProducts />
         <PromoBanners />
-        <FeaturedProducts
-          title="Computer Accessories"
-          bannerSide="right"
-          banner={{
-            eyebrow: "Xiaomi Exclusive",
-            title: "Xiaomi 11T 128GB",
-            price: "GH₵4,490",
-            image: "/images/hero/pixel.png",
-            tone: "orange",
-          }}
-        />
+        <ComputerAccessories />
         <WideBanner />
         <ProductLists />
         <Newsletter />
