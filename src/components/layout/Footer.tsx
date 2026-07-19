@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import styles from "./Footer.module.css";
@@ -52,12 +53,14 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <Link href="/" className={styles.logo}>
-            <span className={styles.mark} aria-hidden />
-            <span className={styles.brandText}>
-              <span>DELLYKNOESTECH</span>
-              <span className={styles.shopTag}>SHOP</span>
-            </span>
+          <Link href="/" className={styles.logo} aria-label="Home">
+            <Image
+              src="/images/logo.png"
+              alt=""
+              width={180}
+              height={42}
+              className={styles.logoImg}
+            />
           </Link>
           <div className={styles.contact}>
             <p className={styles.label}>Customer Support:</p>
@@ -118,7 +121,7 @@ export function Footer() {
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>DELLYKNOESTECH SHOP © {new Date().getFullYear()}. Delivering tech across Ghana.</p>
+          <p>© {new Date().getFullYear()}. Delivering tech across Ghana.</p>
           <div className={styles.socials} aria-label="Social links">
             {["Tw", "Fb", "In", "Ig", "Yt"].map((label) => (
               <a key={label} href="#" className={styles.social} aria-label={label}>

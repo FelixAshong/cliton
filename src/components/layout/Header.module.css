@@ -1,11 +1,14 @@
 .header {
   width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .topBar {
-  background: var(--secondary-700);
-  color: white;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+  background: #ffffff;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
 }
 
 .topInner {
@@ -13,8 +16,8 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-block: 12px;
-  font-size: 14px;
+  padding-block: 10px;
+  font-size: 13px;
   flex-wrap: wrap;
 }
 
@@ -32,34 +35,35 @@
 
 .socials {
   display: flex;
-  gap: 12px;
+  gap: 10px;
 }
 
 .socialDot {
-  width: 16px;
-  height: 16px;
+  width: 14px;
+  height: 14px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.85);
-  opacity: 0.9;
+  background: var(--brand-gradient);
 }
 
 .divider {
   width: 1px;
-  height: 20px;
-  background: rgba(255, 255, 255, 0.24);
+  height: 18px;
+  background: var(--border-strong);
 }
 
 .locale {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: white;
-  opacity: 0.95;
+  color: var(--text);
 }
 
 .mainNav {
-  background: var(--secondary-700);
-  color: white;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 8px 24px rgba(18, 20, 31, 0.05);
 }
 
 .mainInner {
@@ -67,33 +71,28 @@
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-block: 20px;
+  padding-block: 14px;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   flex-shrink: 0;
+  height: 48px;
 }
 
-.brand {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.05;
+.logoImg {
+  height: 48px;
+  width: auto;
+  max-width: 200px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(123, 47, 247, 0.2));
+  transition: transform 0.25s ease, filter 0.25s ease;
 }
 
-.brandName {
-  font-size: clamp(14px, 1.6vw, 20px);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.brandShop {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  opacity: 0.85;
+.logo:hover .logoImg {
+  transform: translateY(-2px) scale(1.03);
+  filter: drop-shadow(0 8px 18px rgba(34, 211, 238, 0.25));
 }
 
 .search {
@@ -101,24 +100,25 @@
   max-width: 646px;
   display: flex;
   align-items: center;
-  background: white;
-  border-radius: var(--radius);
-  padding: 14px 20px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 20px rgba(18, 20, 31, 0.05);
 }
 
 .search input {
   flex: 1;
-  color: var(--gray-900);
+  color: var(--text);
   outline: none;
 }
 
 .search input::placeholder {
-  color: var(--gray-500);
+  color: var(--text-dim);
 }
 
 .search button {
-  color: var(--gray-900);
+  color: var(--purple);
   display: grid;
   place-items: center;
 }
@@ -126,8 +126,27 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 24px;
-  color: white;
+  gap: 18px;
+  color: var(--text);
+}
+
+.actions a {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  color: var(--text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.actions a:hover {
+  transform: translateY(-2px);
+  border-color: rgba(123, 47, 247, 0.3);
+  box-shadow: var(--glow-purple);
+  color: var(--purple);
 }
 
 .cart {
@@ -136,24 +155,23 @@
 
 .cart span {
   position: absolute;
-  top: -6px;
-  right: -8px;
-  min-width: 20px;
-  height: 20px;
+  top: -4px;
+  right: -4px;
+  min-width: 18px;
+  height: 18px;
   border-radius: 100px;
-  background: white;
-  color: var(--secondary-700);
-  border: 1.5px solid var(--secondary-700);
-  font-size: 12px;
-  font-weight: 600;
+  background: var(--brand-gradient);
+  color: white;
+  font-size: 11px;
+  font-weight: 700;
   display: grid;
   place-items: center;
   line-height: 1;
 }
 
 .bottomNav {
-  background: white;
-  border-bottom: 1px solid var(--gray-100);
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
 }
 
 .bottomInner {
@@ -161,14 +179,14 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding-block: 16px;
+  padding-block: 12px;
   flex-wrap: wrap;
 }
 
 .bottomLeft {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 
@@ -176,43 +194,50 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: var(--gray-50);
-  padding: 14px 24px;
-  border-radius: var(--radius);
-  font-weight: 500;
-  font-size: 14px;
+  background: var(--brand-gradient);
+  padding: 12px 20px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 13px;
+  color: white;
+  box-shadow: var(--glow-purple);
 }
 
 .navItem {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--gray-600);
-  font-size: 14px;
+  color: var(--text-muted);
+  font-size: 13px;
+  transition: color 0.2s ease;
 }
 
 .navItem:hover {
-  color: var(--gray-900);
+  color: var(--purple);
 }
 
 .helpIcon {
   width: 22px;
   height: 22px;
-  border: 1.5px solid var(--gray-400);
+  border: 1.5px solid var(--text-dim);
   border-radius: 50%;
   display: grid;
   place-items: center;
   font-size: 12px;
   font-weight: 600;
-  color: var(--gray-500);
+  color: var(--text-muted);
 }
 
 .phone {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: var(--gray-900);
-  font-weight: 500;
+  color: var(--text);
+  font-weight: 600;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: var(--gray-50);
+  border: 1px solid var(--border);
 }
 
 @media (max-width: 900px) {
@@ -220,8 +245,9 @@
     display: none;
   }
 
-  .brandName {
-    font-size: 14px;
+  .logoImg {
+    height: 40px;
+    max-width: 160px;
   }
 
   .navItem:nth-child(n + 4) {
@@ -235,6 +261,6 @@
   }
 
   .actions {
-    gap: 16px;
+    gap: 10px;
   }
 }

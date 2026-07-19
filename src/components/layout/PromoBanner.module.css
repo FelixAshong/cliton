@@ -1,19 +1,25 @@
 .banner {
   position: relative;
-  background: var(--gray-900);
-  min-height: 80px;
+  min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 12px 48px;
+  background:
+    linear-gradient(90deg, rgba(123, 47, 247, 0.08), rgba(34, 211, 238, 0.1)),
+    #ffffff;
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .inner {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(16px, 4vw, 48px);
   flex-wrap: wrap;
+  z-index: 1;
 }
 
 .offer {
@@ -23,19 +29,21 @@
 }
 
 .black {
-  background: var(--warning-300);
-  color: var(--gray-900);
-  font-size: 20px;
-  font-weight: 600;
+  background: var(--brand-gradient);
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
   line-height: 28px;
-  padding: 6px 10px;
+  padding: 6px 12px;
+  border-radius: 10px;
   transform: rotate(-3deg);
+  box-shadow: var(--glow-purple);
 }
 
 .friday {
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
+  color: var(--text);
+  font-size: 22px;
+  font-weight: 700;
   line-height: 32px;
 }
 
@@ -43,21 +51,21 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  color: white;
+  color: var(--text);
   font-size: 14px;
   font-weight: 500;
 }
 
 .discount strong {
-  color: var(--warning-500);
-  font-size: 40px;
-  font-weight: 600;
+  color: var(--purple);
+  font-size: 36px;
+  font-weight: 700;
   line-height: 1;
 }
 
 .discount span:last-child {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .cta {
@@ -69,13 +77,15 @@
   right: 24px;
   top: 50%;
   transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
+  width: 34px;
+  height: 34px;
   display: grid;
   place-items: center;
-  background: #303639;
-  border-radius: var(--radius);
-  color: white;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  color: var(--text);
+  z-index: 2;
 }
 
 @media (max-width: 700px) {
@@ -92,6 +102,6 @@
   }
 
   .black {
-    font-size: 16px;
+    font-size: 15px;
   }
 }

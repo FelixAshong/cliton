@@ -1,7 +1,8 @@
 .footer {
-  background: var(--gray-900);
-  color: white;
+  background: #ffffff;
+  color: var(--text);
   padding-top: 72px;
+  border-top: 1px solid var(--border);
 }
 
 .grid {
@@ -14,78 +15,60 @@
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   margin-bottom: 24px;
+  height: 42px;
 }
 
-.brandText {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-}
-
-.brandText > span:first-child {
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-}
-
-.shopTag {
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: var(--gray-400);
-}
-
-.mark {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 6px solid white;
-  box-shadow: inset 0 0 0 6px var(--gray-900), inset 0 0 0 12px white;
+.logoImg {
+  height: 42px;
+  width: auto;
+  max-width: 180px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 14px rgba(123, 47, 247, 0.18));
 }
 
 .contact {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  color: var(--gray-300);
+  color: var(--text-muted);
   font-size: 14px;
 }
 
 .contact a {
-  color: white;
+  color: var(--text);
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .label {
-  color: var(--gray-400);
-  font-size: 14px;
+  color: var(--text-dim);
+  font-size: 13px;
 }
 
 .colTitle {
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
   margin-bottom: 16px;
+  color: var(--text);
 }
 
 .links {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  color: var(--gray-400);
+  color: var(--text-muted);
 }
 
 .links a:hover {
-  color: white;
+  color: var(--purple);
 }
 
 .browse {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  color: var(--secondary-500) !important;
+  color: var(--cyan-bright) !important;
   margin-top: 4px;
 }
 
@@ -96,16 +79,17 @@
 }
 
 .tags a {
-  border: 1px solid #303639;
+  border: 1px solid var(--border);
   padding: 6px 12px;
-  border-radius: var(--radius);
+  border-radius: 999px;
   font-size: 12px;
-  color: var(--gray-300);
+  color: var(--text-muted);
+  background: var(--gray-50);
 }
 
 .tags a:hover {
-  border-color: white;
-  color: white;
+  border-color: rgba(123, 47, 247, 0.35);
+  color: var(--purple);
 }
 
 .apps {
@@ -117,25 +101,29 @@
 .app {
   display: flex;
   flex-direction: column;
-  background: #303639;
+  background: #ffffff;
+  border: 1px solid var(--border);
   padding: 14px 18px;
-  border-radius: var(--radius);
+  border-radius: 16px;
   gap: 2px;
+  box-shadow: var(--shadow-3d);
 }
 
 .app span {
   font-size: 11px;
-  color: var(--gray-400);
+  color: var(--text-dim);
 }
 
 .app strong {
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 600;
+  color: var(--text);
 }
 
 .bottom {
-  border-top: 1px solid #303639;
+  border-top: 1px solid var(--border);
   padding: 24px 0;
+  background: var(--gray-50);
 }
 
 .bottomInner {
@@ -143,7 +131,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  color: var(--gray-400);
+  color: var(--text-dim);
   font-size: 14px;
   flex-wrap: wrap;
 }
@@ -151,24 +139,24 @@
 .socials {
   display: flex;
   gap: 12px;
-  color: var(--gray-300);
 }
 
 .social {
   width: 36px;
   height: 36px;
-  border-radius: 50%;
-  border: 1px solid #303639;
+  border-radius: 12px;
+  border: 1px solid var(--border);
   display: grid;
   place-items: center;
   font-size: 11px;
   font-weight: 600;
-  color: var(--gray-300);
+  color: var(--text-muted);
+  background: #ffffff;
 }
 
 .social:hover {
-  border-color: white;
-  color: white;
+  border-color: rgba(123, 47, 247, 0.35);
+  color: var(--purple);
 }
 
 @media (max-width: 1100px) {
