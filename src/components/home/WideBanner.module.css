@@ -99,27 +99,53 @@
 @media (max-width: 900px) {
   .banner {
     grid-template-columns: 1fr;
-    padding: 32px 24px;
+    padding: 28px 20px;
+    min-height: 0;
+    gap: 20px;
+  }
+
+  .content {
+    max-width: none;
+    gap: 14px;
   }
 
   .content h2 {
-    font-size: 48px;
+    font-size: clamp(28px, 8vw, 40px);
   }
 
   .content p {
-    font-size: 18px;
+    font-size: 15px;
+  }
+
+  .image {
+    justify-self: center;
+    width: min(100%, 360px);
   }
 
   .image img {
-    width: min(100%, 580px);
+    width: 100%;
   }
 
   .price {
-    width: 96px;
-    height: 96px;
-    min-width: 96px;
-    font-size: 14px;
+    width: 72px;
+    height: 72px;
+    min-width: 72px;
+    font-size: 12px;
     top: 0;
     right: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .section {
+    padding: 28px 0;
+  }
+
+  .banner {
+    padding: 22px 16px;
+  }
+
+  .image {
+    width: min(100%, 280px);
   }
 }

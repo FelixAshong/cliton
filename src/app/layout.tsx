@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
-import { SiteGate } from "@/components/layout/SiteGate";
 import { QuickViewProvider } from "@/components/product/QuickViewProvider";
 import "./globals.css";
 
@@ -24,10 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en-GH" className={outfit.variable}>
       <body>
-        <QuickViewProvider>
-          <SiteGate />
-          {children}
-        </QuickViewProvider>
+        <QuickViewProvider>{children}</QuickViewProvider>
       </body>
     </html>
   );

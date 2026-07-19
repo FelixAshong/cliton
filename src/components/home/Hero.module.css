@@ -253,17 +253,24 @@
 
   .main {
     grid-template-columns: 1fr;
+    padding: 28px 18px;
+    min-height: 0;
+  }
+
+  .main h1 {
+    font-size: clamp(28px, 9vw, 40px);
+    line-height: 1.1;
   }
 
   .dark {
     grid-template-columns: 1fr;
-    padding: 32px;
+    padding: 24px 18px;
   }
 
   .priceBubble {
-    width: 72px;
-    height: 72px;
-    min-width: 72px;
-    font-size: 12px;
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    font-size: 11px;
   }
 }
