@@ -25,7 +25,7 @@ export function FeaturedProducts({
     eyebrow: "COMPUTER & ACCESSORIES",
     title: "Accessories",
     price: "32% Discount",
-    image: "/images/categories/laptop.png",
+    image: "/images/products/macbook-m4.png",
     tone: "yellow",
   },
 }: Props) {
