@@ -4,7 +4,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 424px 1fr;
+  grid-template-columns: minmax(280px, 0.4fr) 1fr;
   gap: 24px;
   align-items: stretch;
 }

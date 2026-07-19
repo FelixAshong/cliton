@@ -1,6 +1,6 @@
 .layout {
   display: grid;
-  grid-template-columns: 312px 1fr;
+  grid-template-columns: minmax(240px, 0.28fr) 1fr;
   gap: 24px;
   align-items: start;
 }
