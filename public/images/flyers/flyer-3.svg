@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" fill="none">
+  <rect width="1600" height="700" fill="#041018"/>
+  <circle cx="300" cy="350" r="260" fill="#22D3EE" opacity="0.12"/>
+  <circle cx="1400" cy="160" r="180" fill="#7B2FF7" opacity="0.2"/>
+  <text x="80" y="140" fill="#67E8F9" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">PAY YOUR WAY</text>
+  <text x="80" y="280" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="70" font-weight="700">Shop with MoMo</text>
+  <text x="80" y="360" fill="#A5B4C8" font-family="Arial, sans-serif" font-size="28">MTN · Telecel · AirtelTigo  instant checkout</text>
+  <rect x="80" y="430" width="300" height="64" rx="32" fill="#22D3EE"/>
+  <text x="230" y="472" fill="#041018" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">CHECKOUT FAST</text>
+  <text x="80" y="620" fill="#8A93A8" font-family="Arial, sans-serif" font-size="20">techassure · hello@techassure.com</text>
+</svg>

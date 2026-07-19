@@ -3,6 +3,7 @@ import { Footer } from "@/components/layout/Footer";
 import { Newsletter } from "@/components/layout/Newsletter";
 import { Hero } from "@/components/home/Hero";
 import { Features } from "@/components/home/Features";
+import { FlyerSlideshow } from "@/components/home/FlyerSlideshow";
 import { BestDeals } from "@/components/home/BestDeals";
 import { Categories } from "@/components/home/Categories";
 import { FeaturedProducts } from "@/components/home/FeaturedProducts";
@@ -18,6 +19,7 @@ export default function HomePage() {
       <main>
         <Hero />
         <Features />
+        <FlyerSlideshow />
         <BestDeals />
         <Categories />
         <FeaturedProducts />
