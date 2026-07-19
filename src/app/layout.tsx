@@ -9,9 +9,9 @@ const publicSans = Public_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "CLICON Ghana — Tech Shop & Electronics Store",
+  title: "DELLYKNOESTECH SHOP — Ghana Tech Store",
   description:
-    "CLICON Ghana — buy phones, laptops, accessories and gadgets with delivery across Accra and Ghana.",
+    "DELLYKNOESTECH SHOP — buy phones, laptops, accessories and gadgets with delivery across Accra and Ghana.",
 };
 
 export default function RootLayout({

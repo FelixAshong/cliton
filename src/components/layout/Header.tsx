@@ -23,7 +23,7 @@ export function Header() {
 
       <div className={styles.topBar}>
         <div className={`container ${styles.topInner}`}>
-          <p>Welcome to CLICON Ghana — your online tech shop.</p>
+          <p>Welcome to DELLYKNOESTECH SHOP — your online tech store.</p>
           <div className={styles.topRight}>
             <div className={styles.follow}>
               <span>Follow us:</span>
@@ -47,8 +47,11 @@ export function Header() {
       <div className={styles.mainNav}>
         <div className={`container ${styles.mainInner}`}>
           <Link href="/" className={styles.logo}>
-            <Image src="/images/logo.svg" alt="" width={48} height={48} />
-            <span>CLICON</span>
+            <Image src="/images/logo.svg" alt="" width={40} height={40} />
+            <span className={styles.brand}>
+              <span className={styles.brandName}>DELLYKNOESTECH</span>
+              <span className={styles.brandShop}>SHOP</span>
+            </span>
           </Link>
 
           <form className={styles.search} role="search">

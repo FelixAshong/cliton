@@ -54,7 +54,10 @@ export function Footer() {
         <div className={styles.brand}>
           <Link href="/" className={styles.logo}>
             <span className={styles.mark} aria-hidden />
-            CLICON
+            <span className={styles.brandText}>
+              <span>DELLYKNOESTECH</span>
+              <span className={styles.shopTag}>SHOP</span>
+            </span>
           </Link>
           <div className={styles.contact}>
             <p className={styles.label}>Customer Support:</p>
@@ -64,7 +67,7 @@ export function Footer() {
               <br />
               Ridge, Accra, Ghana
             </p>
-            <a href="mailto:hello@clicon.com.gh">hello@clicon.com.gh</a>
+            <a href="mailto:hello@dellyknoestech.com">hello@dellyknoestech.com</a>
           </div>
         </div>
 
@@ -115,7 +118,7 @@ export function Footer() {
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>CLICON Ghana © {new Date().getFullYear()}. Delivering tech across Ghana.</p>
+          <p>DELLYKNOESTECH SHOP © {new Date().getFullYear()}. Delivering tech across Ghana.</p>
           <div className={styles.socials} aria-label="Social links">
             {["Tw", "Fb", "In", "Ig", "Yt"].map((label) => (
               <a key={label} href="#" className={styles.social} aria-label={label}>

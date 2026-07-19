@@ -73,15 +73,27 @@
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
   flex-shrink: 0;
 }
 
-.logo span {
-  font-size: 32px;
+.brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.05;
+}
+
+.brandName {
+  font-size: clamp(14px, 1.6vw, 20px);
   font-weight: 700;
   letter-spacing: -0.02em;
-  line-height: 1;
+}
+
+.brandShop {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  opacity: 0.85;
 }
 
 .search {
@@ -208,8 +220,8 @@
     display: none;
   }
 
-  .logo span {
-    font-size: 24px;
+  .brandName {
+    font-size: 14px;
   }
 
   .navItem:nth-child(n + 4) {
