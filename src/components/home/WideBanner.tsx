@@ -22,12 +22,12 @@ export function WideBanner() {
             <Image
               src="/images/categories/laptop.png"
               alt="Macbook Pro"
-              width={480}
-              height={320}
+              width={620}
+              height={420}
               priority={false}
             />
+            <span className={styles.price}>GH₵29,999</span>
           </div>
-          <span className={styles.price}>GH₵29,999</span>
         </div>
       </div>
     </section>

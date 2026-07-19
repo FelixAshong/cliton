@@ -110,19 +110,19 @@ export function FlyerSlideshow() {
                 Apple M1 Max Chip. 32GB Unified Memory, 1TB SSD Storage. Available for
                 pickup in Accra.
               </p>
-              <a href="#products" className="btn btn-primary">
-                Shop Now <ArrowRight size={18} />
+              <a href="#products" className="btn btn-primary btn-primary-lg">
+                Shop Now <ArrowRight size={22} />
               </a>
             </div>
             <div className={styles.productImage}>
               <Image
                 src="/images/categories/laptop.png"
                 alt="Macbook Pro"
-                width={280}
-                height={200}
+                width={520}
+                height={370}
               />
+              <span className={styles.price}>GH₵29,999</span>
             </div>
-            <span className={styles.price}>GH₵29,999</span>
           </article>
         </div>
       </div>
