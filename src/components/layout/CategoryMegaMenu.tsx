@@ -4,7 +4,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ChevronDown, ChevronRight } from "lucide-react";
-import { navCategories, type NavCategory } from "@/data/navCategories";
+import { navCategories } from "@/data/navCategories";
 import styles from "./CategoryMegaMenu.module.css";
 
 function formatPrice(n: number) {
@@ -14,21 +14,17 @@ function formatPrice(n: number) {
   })}`;
 }
 
-function hasPanel(category: NavCategory) {
-  return Boolean(category.brands?.length || category.featured?.length || category.promo);
-}
-
 export function CategoryMegaMenu() {
   const [open, setOpen] = useState(false);
-  const [activeId, setActiveId] = useState(
-    () => navCategories.find((c) => hasPanel(c))?.id ?? navCategories[0]?.id ?? "",
+  const [activeId, setActiveId] = useState(navCategories[0]?.id ?? "");
+  const [activeBrand, setActiveBrand] = useState(
+    () => navCategories[0]?.brands[1] ?? navCategories[0]?.brands[0] ?? "",
   );
   const menuId = useId();
   const wrapRef = useRef<HTMLDivElement>(null);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const active = navCategories.find((c) => c.id === activeId) ?? navCategories[0];
-  const showFlyout = active ? hasPanel(active) : false;
 
   function clearCloseTimer() {
     if (closeTimer.current) {
@@ -45,6 +41,12 @@ export function CategoryMegaMenu() {
   function scheduleClose() {
     clearCloseTimer();
     closeTimer.current = setTimeout(() => setOpen(false), 150);
+  }
+
+  function selectCategory(categoryId: string) {
+    const category = navCategories.find((c) => c.id === categoryId);
+    setActiveId(categoryId);
+    setActiveBrand(category?.brands[1] ?? category?.brands[0] ?? "");
   }
 
   useEffect(() => {
@@ -73,6 +75,8 @@ export function CategoryMegaMenu() {
   }, [open]);
 
   useEffect(() => () => clearCloseTimer(), []);
+
+  if (!active) return null;
 
   return (
     <div
@@ -107,89 +111,73 @@ export function CategoryMegaMenu() {
                   href={category.href}
                   role="menuitem"
                   className={`${styles.categoryItem} ${isActive ? styles.categoryItemActive : ""}`}
-                  onMouseEnter={() => setActiveId(category.id)}
-                  onFocus={() => setActiveId(category.id)}
+                  onMouseEnter={() => selectCategory(category.id)}
+                  onFocus={() => selectCategory(category.id)}
                 >
                   {category.name}
-                  {hasPanel(category) && <ChevronRight size={12} aria-hidden />}
+                  <ChevronRight size={12} aria-hidden />
                 </Link>
               );
             })}
           </div>
 
-          {showFlyout && active && (
-            <div className={styles.flyout} aria-label={`${active.name} submenu`}>
-              {active.brands && active.brands.length > 0 && (
-                <div className={styles.brands}>
-                  {active.brands.map((brand, index) => (
-                    <Link
-                      key={brand}
-                      href={active.href}
-                      className={`${styles.brandItem} ${index === 1 ? styles.brandItemActive : ""}`}
-                    >
-                      {brand}
-                    </Link>
-                  ))}
-                </div>
-              )}
+          <div className={styles.flyout} aria-label={`${active.name} submenu`}>
+            <div className={styles.brands}>
+              {active.brands.map((brand) => (
+                <Link
+                  key={brand}
+                  href={active.href}
+                  className={`${styles.brandItem} ${brand === activeBrand ? styles.brandItemActive : ""}`}
+                  onMouseEnter={() => setActiveBrand(brand)}
+                  onFocus={() => setActiveBrand(brand)}
+                >
+                  {brand}
+                </Link>
+              ))}
+            </div>
 
-              {active.featured && active.featured.length > 0 && (
-                <div className={styles.featured}>
-                  <p className={styles.featuredTitle}>Featured phones</p>
-                  {active.featured.map((product) => (
-                    <Link key={product.id} href={active.href} className={styles.product}>
-                      <div className={styles.productImage}>
-                        <Image
-                          src={product.image}
-                          alt=""
-                          fill
-                          sizes="80px"
-                        />
-                      </div>
-                      <div className={styles.productBody}>
-                        <p className={styles.productTitle}>{product.title}</p>
-                        <div className={styles.productPrice}>
-                          {typeof product.originalPrice === "number" && (
-                            <span className={styles.productOriginal}>
-                              {formatPrice(product.originalPrice)}
-                            </span>
-                          )}
-                          <span>{formatPrice(product.price)}</span>
-                        </div>
-                      </div>
-                    </Link>
-                  ))}
-                </div>
-              )}
-
-              {active.promo && (
-                <div className={styles.promo}>
-                  <div className={styles.promoCopy}>
-                    <div className={styles.promoImage}>
-                      <Image
-                        src={active.promo.image}
-                        alt=""
-                        fill
-                        sizes="248px"
-                      />
-                    </div>
-                    <div>
-                      <p className={styles.promoTitle}>{active.promo.title}</p>
-                      <p className={styles.promoDesc}>{active.promo.description}</p>
-                    </div>
-                    <div className={styles.promoPriceRow}>
-                      <span>Starting price:</span>
-                      <span className={styles.promoPriceTag}>{active.promo.priceLabel}</span>
+            <div className={styles.featured}>
+              <p className={styles.featuredTitle}>{active.featuredTitle}</p>
+              {active.featured.map((product) => (
+                <Link key={product.id} href={active.href} className={styles.product}>
+                  <div className={styles.productImage}>
+                    <Image src={product.image} alt="" fill sizes="80px" />
+                  </div>
+                  <div className={styles.productBody}>
+                    <p className={styles.productTitle}>{product.title}</p>
+                    <div className={styles.productPrice}>
+                      {typeof product.originalPrice === "number" && (
+                        <span className={styles.productOriginal}>
+                          {formatPrice(product.originalPrice)}
+                        </span>
+                      )}
+                      <span>{formatPrice(product.price)}</span>
                     </div>
                   </div>
-                  <Link href={active.promo.href} className={styles.promoCta}>
-                    Shop now
-                    <ArrowRight size={20} aria-hidden />
-                  </Link>
-                </div>
-              )}
+                </Link>
+              ))}
             </div>
-          )}
+
+            <div className={styles.promo}>
+              <div className={styles.promoCopy}>
+                <div className={styles.promoImage}>
+                  <Image src={active.promo.image} alt="" fill sizes="248px" />
+                </div>
+                <div>
+                  <p className={styles.promoTitle}>{active.promo.title}</p>
+                  <p className={styles.promoDesc}>{active.promo.description}</p>
+                </div>
+                <div className={styles.promoPriceRow}>
+                  <span>Starting price:</span>
+                  <span className={styles.promoPriceTag}>{active.promo.priceLabel}</span>
+                </div>
+              </div>
+              <Link href={active.promo.href} className={styles.promoCta}>
+                Shop now
+                <ArrowRight size={20} aria-hidden />
+              </Link>
+            </div>
+          </div>
         </div>
       )}
     </div>
