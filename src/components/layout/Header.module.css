@@ -58,19 +58,6 @@
   transform: translateY(-1px);
 }
 
-.divider {
-  width: 1px;
-  height: 18px;
-  background: var(--border-strong);
-}
-
-.locale {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  color: var(--text);
-}
-
 .mainNav {
   background: rgba(255, 255, 255, 0.9);
   color: var(--text);
