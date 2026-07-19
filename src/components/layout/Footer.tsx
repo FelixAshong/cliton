@@ -53,12 +53,12 @@ export function Footer() {
     <footer className={styles.footer}>
       <div className={`container ${styles.grid}`}>
         <div className={styles.brand}>
-          <Link href="/" className={styles.logo} aria-label="Home">
+          <Link href="/" className={styles.logo} aria-label="techassure home">
             <Image
-              src="/images/logo-mark.png"
-              alt=""
-              width={44}
-              height={44}
+              src="/images/logo-wordmark-light.png"
+              alt="techassure"
+              width={180}
+              height={42}
               className={styles.logoImg}
             />
           </Link>
@@ -70,7 +70,7 @@ export function Footer() {
               <br />
               Ridge, Accra, Ghana
             </p>
-            <a href="mailto:hello@dellyknoestech.com">hello@dellyknoestech.com</a>
+            <a href="mailto:hello@techassure.com">hello@techassure.com</a>
           </div>
         </div>
 
@@ -121,7 +121,7 @@ export function Footer() {
 
       <div className={styles.bottom}>
         <div className={`container ${styles.bottomInner}`}>
-          <p>© {new Date().getFullYear()}. Delivering tech across Ghana.</p>
+          <p>techassure © {new Date().getFullYear()}. Delivering tech across Ghana.</p>
           <div className={styles.socials} aria-label="Social links">
             {["Tw", "Fb", "In", "Ig", "Yt"].map((label) => (
               <a key={label} href="#" className={styles.social} aria-label={label}>

@@ -16,11 +16,13 @@
   display: inline-flex;
   align-items: center;
   margin-bottom: 24px;
+  height: 40px;
 }
 
 .logoImg {
-  width: 44px;
-  height: 44px;
+  height: 40px;
+  width: auto;
+  max-width: 180px;
   object-fit: contain;
   display: block;
 }

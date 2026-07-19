@@ -23,7 +23,7 @@ export function Header() {
 
       <div className={styles.topBar}>
         <div className={`container ${styles.topInner}`}>
-          <p>Welcome to your online tech store.</p>
+          <p>Welcome to techassure — your online tech store.</p>
           <div className={styles.topRight}>
             <div className={styles.follow}>
               <span>Follow us:</span>
@@ -46,12 +46,12 @@ export function Header() {
 
       <div className={styles.mainNav}>
         <div className={`container ${styles.mainInner}`}>
-          <Link href="/" className={styles.logo} aria-label="Home">
+          <Link href="/" className={styles.logo} aria-label="techassure home">
             <Image
-              src="/images/logo-mark.png"
-              alt=""
-              width={48}
-              height={48}
+              src="/images/logo-wordmark-light.png"
+              alt="techassure"
+              width={200}
+              height={47}
               priority
               className={styles.logoImg}
             />

@@ -9,9 +9,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Tech Shop Ghana — Phones, Laptops & Gadgets",
+  title: "techassure — Ghana Tech Store",
   description:
-    "Buy phones, laptops, accessories and gadgets with delivery across Accra and Ghana.",
+    "techassure — buy phones, laptops, accessories and gadgets with delivery across Accra and Ghana.",
 };
 
 export default function RootLayout({
