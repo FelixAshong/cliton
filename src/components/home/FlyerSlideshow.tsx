@@ -53,58 +53,62 @@ export function FlyerSlideshow() {
             }
           }}
         >
-          <div className={styles.viewport}>
-            {flyers.map((flyer, i) => (
-              <a
-                key={flyer.id}
-                href={flyer.href ?? "#products"}
-                className={`${styles.slide} ${i === index ? styles.active : ""}`}
-                aria-hidden={i !== index}
-                tabIndex={i === index ? 0 : -1}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={flyer.src} alt={flyer.alt} className={styles.image} />
-              </a>
-            ))}
+          <div className={styles.frame}>
+            <div className={styles.viewport}>
+              {flyers.map((flyer, i) => (
+                <a
+                  key={flyer.id}
+                  href={flyer.href ?? "#products"}
+                  className={`${styles.slide} ${i === index ? styles.active : ""}`}
+                  aria-hidden={i !== index}
+                  tabIndex={i === index ? 0 : -1}
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={flyer.src} alt={flyer.alt} className={styles.image} />
+                </a>
+              ))}
+            </div>
+
+            <button
+              type="button"
+              className={`${styles.nav} ${styles.prev}`}
+              onClick={prev}
+              aria-label="Previous flyer"
+            >
+              <ChevronLeft size={22} />
+            </button>
+            <button
+              type="button"
+              className={`${styles.nav} ${styles.next}`}
+              onClick={next}
+              aria-label="Next flyer"
+            >
+              <ChevronRight size={22} />
+            </button>
           </div>
 
-          <button
-            type="button"
-            className={`${styles.nav} ${styles.prev}`}
-            onClick={prev}
-            aria-label="Previous flyer"
-          >
-            <ChevronLeft size={22} />
-          </button>
-          <button
-            type="button"
-            className={`${styles.nav} ${styles.next}`}
-            onClick={next}
-            aria-label="Next flyer"
-          >
-            <ChevronRight size={22} />
-          </button>
+          <div className={styles.meta}>
+            <div className={styles.dots} role="tablist" aria-label="Flyer slides">
+              {flyers.map((flyer, i) => (
+                <button
+                  key={flyer.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={i === index}
+                  aria-label={`Show ${flyer.title}`}
+                  className={`${styles.dot} ${i === index ? styles.dotActive : ""}`}
+                  onClick={() => goTo(i)}
+                />
+              ))}
+            </div>
 
-          <div className={styles.dots} role="tablist" aria-label="Flyer slides">
-            {flyers.map((flyer, i) => (
-              <button
-                key={flyer.id}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                aria-label={`Show ${flyer.title}`}
-                className={`${styles.dot} ${i === index ? styles.dotActive : ""}`}
-                onClick={() => goTo(i)}
-              />
-            ))}
+            <p className={styles.caption}>
+              <span>{current.title}</span>
+              <span className={styles.count}>
+                {index + 1} / {total}
+              </span>
+            </p>
           </div>
-
-          <p className={styles.caption}>
-            <span>{current.title}</span>
-            <span className={styles.count}>
-              {index + 1} / {total}
-            </span>
-          </p>
         </div>
       </div>
     </section>

@@ -1,11 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" fill="none">
-  <rect width="1600" height="700" fill="#041018"/>
-  <circle cx="300" cy="350" r="260" fill="#22D3EE" opacity="0.12"/>
-  <circle cx="1400" cy="160" r="180" fill="#7B2FF7" opacity="0.2"/>
-  <text x="80" y="140" fill="#67E8F9" font-family="Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="4">PAY YOUR WAY</text>
-  <text x="80" y="280" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="70" font-weight="700">Shop with MoMo</text>
-  <text x="80" y="360" fill="#A5B4C8" font-family="Arial, sans-serif" font-size="28">MTN · Telecel · AirtelTigo  instant checkout</text>
-  <rect x="80" y="430" width="300" height="64" rx="32" fill="#22D3EE"/>
-  <text x="230" y="472" fill="#041018" font-family="Arial, sans-serif" font-size="22" font-weight="700" text-anchor="middle">CHECKOUT FAST</text>
-  <text x="80" y="620" fill="#8A93A8" font-family="Arial, sans-serif" font-size="20">techassure · hello@techassure.com</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" fill="none">
+  <rect width="800" height="1000" fill="#041018"/>
+  <circle cx="200" cy="420" r="220" fill="#22D3EE" opacity="0.12"/>
+  <circle cx="680" cy="180" r="160" fill="#7B2FF7" opacity="0.2"/>
+  <text x="48" y="100" fill="#67E8F9" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">PAY YOUR WAY</text>
+  <text x="48" y="300" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="48" font-weight="700">MoMo &amp; card</text>
+  <text x="48" y="370" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="48" font-weight="700">accepted</text>
+  <text x="48" y="460" fill="#94A3B8" font-family="Arial, sans-serif" font-size="22">Fast checkout. Secure payments.</text>
+  <rect x="48" y="540" width="260" height="56" rx="28" fill="#22D3EE"/>
+  <text x="178" y="576" fill="#041018" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">SHOP WITH MOMO</text>
+  <text x="48" y="920" fill="#64748B" font-family="Arial, sans-serif" font-size="16">techassure · Accra</text>
 </svg>

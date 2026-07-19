@@ -1,22 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="700" viewBox="0 0 1600 700" fill="none">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="1000" viewBox="0 0 800 1000" fill="none">
   <defs>
-    <linearGradient id="g4" x1="0" y1="0" x2="1600" y2="700" gradientUnits="userSpaceOnUse">
+    <linearGradient id="g4" x1="0" y1="0" x2="800" y2="1000" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFFFFF"/>
       <stop offset="1" stop-color="#EEF2FF"/>
     </linearGradient>
-    <linearGradient id="b4" x1="0" y1="0" x2="1" y2="1">
-      <stop stop-color="#7B2FF7"/>
-      <stop offset="1" stop-color="#3B5BFF"/>
-    </linearGradient>
   </defs>
-  <rect width="1600" height="700" fill="url(#g4)"/>
-  <rect x="60" y="60" width="1480" height="580" rx="28" fill="#FFFFFF" stroke="#E6E9F2" stroke-width="2"/>
-  <text x="120" y="180" fill="#7B2FF7" font-family="Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="3">BUNDLE &amp; SAVE</text>
-  <text x="120" y="290" fill="#12141F" font-family="Arial, sans-serif" font-size="64" font-weight="700">Accessories packs</text>
-  <text x="120" y="370" fill="#5B647A" font-family="Arial, sans-serif" font-size="28">Chargers, cases, earbuds  mix &amp; match deals</text>
-  <rect x="120" y="440" width="220" height="56" rx="28" fill="url(#b4)"/>
-  <text x="230" y="476" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="20" font-weight="700" text-anchor="middle">SHOP PACKS</text>
-  <circle cx="1180" cy="350" r="160" fill="url(#b4)" opacity="0.18"/>
-  <circle cx="1340" cy="280" r="90" fill="#22D3EE" opacity="0.25"/>
-  <text x="1100" y="360" fill="#12141F" font-family="Arial, sans-serif" font-size="42" font-weight="700">Save 25%</text>
+  <rect width="800" height="1000" fill="url(#g4)"/>
+  <circle cx="620" cy="220" r="180" fill="#7B2FF7" opacity="0.1"/>
+  <circle cx="140" cy="760" r="150" fill="#22D3EE" opacity="0.12"/>
+  <text x="48" y="90" fill="#7B2FF7" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="3">BUNDLE &amp; SAVE</text>
+  <text x="48" y="280" fill="#0F1220" font-family="Arial, sans-serif" font-size="48" font-weight="700">Accessories</text>
+  <text x="48" y="350" fill="#0F1220" font-family="Arial, sans-serif" font-size="48" font-weight="700">that complete</text>
+  <text x="48" y="420" fill="#0F1220" font-family="Arial, sans-serif" font-size="48" font-weight="700">the setup</text>
+  <text x="48" y="500" fill="#4B5568" font-family="Arial, sans-serif" font-size="22">Cases, buds, chargers &amp; more</text>
+  <rect x="48" y="560" width="240" height="56" rx="28" fill="#0F1220"/>
+  <text x="168" y="596" fill="#FFFFFF" font-family="Arial, sans-serif" font-size="18" font-weight="700" text-anchor="middle">SHOP BUNDLES</text>
+  <text x="48" y="920" fill="#6B7280" font-family="Arial, sans-serif" font-size="16">Free Accra delivery on select orders</text>
 </svg>
