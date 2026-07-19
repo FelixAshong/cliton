@@ -20,10 +20,10 @@ export function WideBanner() {
           </div>
           <div className={styles.image}>
             <Image
-              src="/images/categories/laptop.png"
+              src="/images/products/macbook-pro.png"
               alt="Macbook Pro"
-              width={620}
-              height={420}
+              width={760}
+              height={520}
               priority={false}
             />
             <span className={styles.price}>GH₵29,999</span>

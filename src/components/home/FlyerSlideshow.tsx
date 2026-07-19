@@ -116,10 +116,10 @@ export function FlyerSlideshow() {
             </div>
             <div className={styles.productImage}>
               <Image
-                src="/images/categories/laptop.png"
+                src="/images/products/macbook-pro.png"
                 alt="Macbook Pro"
-                width={520}
-                height={370}
+                width={680}
+                height={480}
               />
               <span className={styles.price}>GH₵29,999</span>
             </div>
