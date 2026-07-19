@@ -46,13 +46,6 @@ export function Header() {
                 ))}
               </div>
             </div>
-            <span className={styles.divider} />
-            <button type="button" className={styles.locale}>
-              Eng <ChevronDown size={12} />
-            </button>
-            <button type="button" className={styles.locale}>
-              GHS <ChevronDown size={12} />
-            </button>
           </div>
         </div>
       </div>
