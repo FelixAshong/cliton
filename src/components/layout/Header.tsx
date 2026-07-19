@@ -48,9 +48,9 @@ export function Header() {
         <div className={`container ${styles.mainInner}`}>
           <Link href="/" className={styles.logo} aria-label="Home">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-mark.png"
               alt=""
-              width={200}
+              width={48}
               height={48}
               priority
               className={styles.logoImg}

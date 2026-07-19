@@ -55,10 +55,10 @@ export function Footer() {
         <div className={styles.brand}>
           <Link href="/" className={styles.logo} aria-label="Home">
             <Image
-              src="/images/logo.png"
+              src="/images/logo-mark.png"
               alt=""
-              width={180}
-              height={42}
+              width={44}
+              height={44}
               className={styles.logoImg}
             />
           </Link>
