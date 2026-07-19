@@ -10,7 +10,7 @@ export function PromoBanners() {
           <div className={styles.content}>
             <span className={`badge badge-hot`}>INTRODUCING</span>
             <h3>New Apple Homepod Mini</h3>
-            <p>Jam-packed with innovation, HomePod mini delivers unexpectedly.</p>
+            <p>Now in stock in Accra — compact smart speaker with big sound.</p>
             <a href="#products" className="btn btn-primary">
               Shop Now <ArrowRight size={18} />
             </a>
@@ -29,7 +29,7 @@ export function PromoBanners() {
           <div className={styles.content}>
             <span className={`badge badge-sale`}>INTRODUCING NEW</span>
             <h3>Xiaomi Mi 11 Ultra 12GB+256GB</h3>
-            <p>*Data provided by internal laboratories. Industry measurement.</p>
+            <p>Dual SIM ready for MTN, Telecel & AirtelTigo networks.</p>
             <a href="#products" className="btn btn-primary">
               Shop Now <ArrowRight size={18} />
             </a>

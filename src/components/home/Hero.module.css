@@ -157,16 +157,19 @@
   position: absolute;
   top: 8%;
   right: 4%;
-  width: 100px;
-  height: 100px;
+  min-width: 110px;
+  height: 110px;
+  padding: 8px;
   border-radius: 50%;
   background: var(--secondary-500);
   border: 4px solid white;
   color: white;
-  font-size: 22px;
+  font-size: 15px;
   font-weight: 600;
   display: grid;
   place-items: center;
+  text-align: center;
+  line-height: 1.15;
   box-shadow: 0 8px 24px rgba(45, 165, 243, 0.35);
 }
 
