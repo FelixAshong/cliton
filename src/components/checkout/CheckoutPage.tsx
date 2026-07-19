@@ -3,10 +3,10 @@
 import { FormEvent, useId, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   ArrowRight,
   Banknote,
-  Check,
   ChevronRight,
   CreditCard,
   Home,
@@ -57,13 +57,13 @@ function truncate(title: string, max = 42) {
 }
 
 export function CheckoutPage() {
+  const router = useRouter();
   const formId = useId();
   const [items] = useState<CartItem[]>(cartItems);
   const [payment, setPayment] = useState<PaymentMethod>("card");
   const [shipDifferent, setShipDifferent] = useState(false);
   const [region, setRegion] = useState("Greater Accra");
   const [city, setCity] = useState("Accra");
-  const [placed, setPlaced] = useState(false);
 
   const subtotal = items.reduce(
     (sum, item) => sum + item.price * item.quantity,
@@ -76,7 +76,7 @@ export function CheckoutPage() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    setPlaced(true);
+    router.push("/checkout/success");
   }
 
   return (
@@ -97,27 +97,6 @@ export function CheckoutPage() {
       </nav>
 
       <div className={`container ${styles.content}`}>
-        {placed ? (
-          <div className={styles.success} role="status">
-            <div className={styles.successIcon} aria-hidden>
-              <Check size={32} strokeWidth={2.5} />
-            </div>
-            <h1>Your order is confirmed</h1>
-            <p>
-              Thanks for shopping with techassure. We’ll call you on the phone
-              number you provided to arrange delivery.
-            </p>
-            <div className={styles.successActions}>
-              <Link href="/track-order" className={styles.placeOrder}>
-                Track order
-                <ArrowRight size={20} strokeWidth={2} aria-hidden />
-              </Link>
-              <Link href="/shop" className={styles.outlineBtn}>
-                Continue shopping
-              </Link>
-            </div>
-          </div>
-        ) : (
           <form
             className={styles.layout}
             onSubmit={handleSubmit}
@@ -499,7 +478,6 @@ export function CheckoutPage() {
               </div>
             </aside>
           </form>
-        )}
       </div>
     </div>
   );

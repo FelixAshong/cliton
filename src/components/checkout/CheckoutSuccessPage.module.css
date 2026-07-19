@@ -1,0 +1,176 @@
+.page {
+  padding-bottom: 72px;
+}
+
+.breadcrumb {
+  background: #f2f4f5;
+  border-bottom: 1px solid #e4e7e9;
+}
+
+.breadcrumbInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  padding-block: 22px;
+  font-size: 14px;
+  color: #5f6c72;
+}
+
+.crumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #5f6c72;
+}
+
+.crumb:hover {
+  color: var(--purple);
+}
+
+.crumbActive {
+  color: #2da5f3;
+  font-weight: 500;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  padding-top: 96px;
+  padding-bottom: 48px;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: min(100%, 536px);
+  text-align: center;
+  animation: rise 0.35s ease both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.iconWrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 8px;
+}
+
+.iconRing {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 2px dashed #fa8232;
+  animation: spin 18s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.icon {
+  position: absolute;
+  inset: 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #fa8232;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(250, 130, 50, 0.28);
+}
+
+.panel h1 {
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: #191c1f;
+}
+
+.panel p {
+  max-width: 42ch;
+  font-size: 14px;
+  line-height: 22px;
+  color: #5f6c72;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.primary,
+.secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  padding: 0 24px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.012em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition:
+    filter 0.15s ease,
+    background 0.15s ease;
+}
+
+.primary {
+  background: #fa8232;
+  color: #fff;
+}
+
+.primary:hover {
+  filter: brightness(1.05);
+}
+
+.secondary {
+  border: 2px solid #2da5f3;
+  color: #2da5f3;
+  background: #fff;
+}
+
+.secondary:hover {
+  background: rgba(45, 165, 243, 0.06);
+}
+
+@media (max-width: 560px) {
+  .content {
+    padding-top: 56px;
+  }
+
+  .panel h1 {
+    font-size: 22px;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .primary,
+  .secondary {
+    width: 100%;
+  }
+}
