@@ -173,24 +173,24 @@ export function ShopPage() {
                 }}
               />
             </div>
-            <div className={styles.radioList}>
-              {pricePresets.map((option) => (
-                <label key={option.id} className={styles.radioItem}>
-                  <input
-                    type="radio"
-                    name="price"
-                    checked={pricePreset === option.id}
-                    onChange={() => {
-                      setPricePreset(option.id);
-                      setMinPrice("");
-                      setMaxPrice("");
-                      setPage(1);
-                    }}
-                  />
-                  <span>{option.label}</span>
-                </label>
-              ))}
-            </div>
+            <label className={styles.priceSelect}>
+              <select
+                value={pricePreset}
+                aria-label="Price range"
+                onChange={(e) => {
+                  setPricePreset(e.target.value);
+                  setMinPrice("");
+                  setMaxPrice("");
+                  setPage(1);
+                }}
+              >
+                {pricePresets.map((option) => (
+                  <option key={option.id} value={option.id}>
+                    {option.label}
+                  </option>
+                ))}
+              </select>
+            </label>
           </section>
 
           <section className={styles.filterBlock}>
