@@ -11,10 +11,21 @@ import {
   ShoppingCart,
   User,
 } from "lucide-react";
+import {
+  FacebookIcon,
+  InstagramIcon,
+  SnapchatIcon,
+  TikTokIcon,
+} from "@/components/icons/SocialIcons";
 import { PromoBanner } from "./PromoBanner";
 import styles from "./Header.module.css";
 
-const socials = ["Twitter", "Facebook", "Pinterest", "Reddit", "YouTube", "Instagram"];
+const socials = [
+  { name: "Snapchat", href: "#", Icon: SnapchatIcon },
+  { name: "Instagram", href: "#", Icon: InstagramIcon },
+  { name: "TikTok", href: "#", Icon: TikTokIcon },
+  { name: "Facebook", href: "#", Icon: FacebookIcon },
+] as const;
 
 export function Header() {
   return (
@@ -28,8 +39,10 @@ export function Header() {
             <div className={styles.follow}>
               <span>Follow us:</span>
               <div className={styles.socials}>
-                {socials.map((name) => (
-                  <a key={name} href="#" aria-label={name} className={styles.socialDot} />
+                {socials.map(({ name, href, Icon }) => (
+                  <a key={name} href={href} aria-label={name} className={styles.socialLink}>
+                    <Icon size={15} />
+                  </a>
                 ))}
               </div>
             </div>
