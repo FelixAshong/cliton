@@ -20,7 +20,7 @@ export function WideBanner() {
           </div>
           <div className={styles.image}>
             <Image
-              src="/images/products/macbook-pro.png"
+              src="/images/products/macbook-m4.png"
               alt="Macbook Pro"
               width={760}
               height={520}

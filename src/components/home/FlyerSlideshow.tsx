@@ -116,7 +116,7 @@ export function FlyerSlideshow() {
             </div>
             <div className={styles.productImage}>
               <Image
-                src="/images/products/macbook-pro.png"
+                src="/images/products/macbook-m4.png"
                 alt="Macbook Pro"
                 width={680}
                 height={480}
